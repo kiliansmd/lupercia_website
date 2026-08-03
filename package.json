@@ -1,0 +1,8 @@
+{
+  "name": "lupercia-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "vercel-build": "rm -rf dist && mkdir dist && cp index.html styles.css script.js dist/"
+  }
+}
