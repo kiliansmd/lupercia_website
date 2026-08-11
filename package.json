@@ -2,7 +2,13 @@
   "name": "lupercia-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "vercel-build": "rm -rf dist && mkdir dist && cp index.html styles.css script.js dist/"
+    "build": "npm run vercel-build",
+    "vercel-build": "rm -rf dist && mkdir dist && cp index.html styles.css script.js dist/",
+    "check:content": "node --input-type=module -e \"import('./content/site-content.js').then(({ siteContent }) => { if (!siteContent.navigation.length || !siteContent.teaCategories.length) process.exit(1); })\"",
+    "typecheck": "node --check script.js && node --check content/site-content.js",
+    "lint": "npm run typecheck && npm run check:content",
+    "test": "npm run check:content"
   }
 }
