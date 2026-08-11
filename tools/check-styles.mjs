@@ -21,6 +21,10 @@ const requiredPatterns = [
   ['tea enjoyment hero', '.tea-hero'],
   ['tea families', '.tea-families'],
   ['mate editorial', '.mate-editorial'],
+  ['events hero', '.events-hero'],
+  ['event system cards', '.event-system-card'],
+  ['Maria story hero', '.maria-hero'],
+  ['Maria portrait', '.maria-portrait'],
 ];
 
 const missing = requiredPatterns

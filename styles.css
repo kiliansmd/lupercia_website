@@ -130,6 +130,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
 .maria-copy > p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .maria-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-4); margin: var(--space-6) 0 0; padding: 0; border-top: 1px solid var(--color-line); list-style: none; }
 .maria-roles li { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line); font-size: var(--text-small); }
+.maria-copy .text-link { margin-top: var(--space-5); }
 
 /* Product world */
 .product-world { background: var(--color-ink); color: var(--color-paper); }
@@ -244,6 +245,74 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
 .tea-visit p { color: var(--color-paper-strong); }
 .tea-visit .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
 
+/* Veranstaltungen — expandable editorial event system */
+.events-hero { display: grid; background: var(--color-paper); }
+.events-hero > div:first-child { display: flex; flex-direction: column; justify-content: flex-end; min-height: 36rem; padding: var(--space-7) var(--gutter); }
+.events-hero h1 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
+.events-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
+.events-hero-mark { display: grid; place-items: center; min-height: 28rem; overflow: hidden; background: var(--color-leaf-dark); }
+.events-hero-mark span { color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; transform: rotate(-4deg); }
+.next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { display: grid; gap: var(--space-7); }
+.next-event-deep h2, .upcoming-events h2, .recurring-events h2, .event-formats h2, .private-events h2, .events-cta h2 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
+.next-event-deep { background: var(--color-taupe-light); }
+.event-system-list { border-top: 1px solid var(--color-line); }
+.event-system-card { position: relative; padding: var(--space-5) 0; border-bottom: 1px solid var(--color-line); }
+.event-system-card h3 { max-width: 12ch; margin: var(--space-4) 0; font-size: var(--text-h3); line-height: .98; }
+.event-system-card > p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-ink-soft); }
+.event-system-card--featured { min-height: 25rem; padding: var(--space-6); border: 0; background: var(--color-burgundy); color: var(--color-paper); }
+.event-system-card--featured > p:not(.eyebrow) { color: var(--color-paper-strong); }
+.event-status { display: inline-block; margin-top: var(--space-4); padding-top: var(--space-2); border-top: 1px solid currentColor; font-size: var(--text-label); letter-spacing: .1em; text-transform: uppercase; }
+.event-status--coming-soon { color: var(--color-ink-soft); }
+.event-status--sold-out { color: var(--color-burgundy); }
+.event-followup, .event-empty { color: var(--color-ink-soft); font-family: var(--font-display); font-size: 1.5rem; font-style: italic; }
+.upcoming-events { background: var(--color-paper); }
+.upcoming-events header > p:last-child { max-width: var(--copy-max); color: var(--color-ink-soft); }
+.recurring-events { background: var(--color-ivory); }
+.event-formats { background: var(--color-ink); color: var(--color-paper); }
+.format-lines { border-top: 1px solid var(--color-line-inverse); }
+.format-lines article { padding: var(--space-5) 0; border-bottom: 1px solid var(--color-line-inverse); }
+.format-lines span { color: var(--color-paper-subtle); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.format-lines h3 { margin: var(--space-2) 0; font-size: clamp(1.8rem, 6vw, 3rem); }
+.format-lines p { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.private-events { background: var(--color-paper); }
+.private-events > div > p { max-width: var(--copy-max); color: var(--color-ink-soft); }
+.events-cta { background: var(--color-terracotta); color: var(--color-paper); }
+.events-cta p { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.events-cta .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
+
+/* Maria — personal editorial story */
+.maria-hero { display: grid; background: var(--color-paper); }
+.maria-portrait { position: relative; min-height: 40rem; overflow: hidden; background: var(--color-burgundy); }
+.maria-portrait::before { position: absolute; top: 10%; left: 50%; width: 58%; aspect-ratio: .72; border-radius: 48% 48% 18% 18%; background: var(--color-taupe); content: ""; transform: translateX(-50%); }
+.maria-portrait::after { position: absolute; right: -12%; bottom: -7%; left: -12%; height: 50%; border-radius: 50% 50% 0 0; background: var(--color-leaf-dark); content: ""; }
+.maria-portrait span { position: absolute; right: var(--space-5); bottom: var(--space-4); z-index: 2; color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 18vw, 11rem); font-style: italic; }
+.maria-hero-copy { display: flex; flex-direction: column; justify-content: flex-end; min-height: 38rem; padding: var(--space-7) var(--gutter); }
+.maria-hero h1 { max-width: 9ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
+.maria-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
+.maria-intro, .name-story, .sommelier, .argentina-story, .selection-philosophy, .hostess, .maria-closing, .maria-visit { display: grid; gap: var(--space-7); }
+.maria-intro h2, .name-story h2, .tea-relationship h2, .sommelier h2, .argentina-story h2, .selection-philosophy h2, .hostess h2, .maria-closing h2, .maria-visit h2 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
+.maria-intro > div > p, .name-story > div > p, .sommelier > div > p, .argentina-story > div > p, .selection-philosophy > div > p, .hostess > div > p, .maria-closing > div > p, .maria-visit > div > p { max-width: var(--copy-max); color: var(--color-ink-soft); }
+.maria-intro { background: var(--color-ivory); }
+.name-story { background: var(--color-paper); }
+.tea-relationship { display: grid; background: var(--color-leaf-dark); color: var(--color-paper); }
+.tea-relationship-mark { display: grid; place-items: center; min-height: 31rem; background: var(--color-taupe); color: var(--color-ink); }
+.tea-relationship-mark span { font-family: var(--font-display); font-size: clamp(5rem, 18vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; transform: rotate(-4deg); }
+.tea-relationship-copy { padding: var(--space-8) var(--gutter); }
+.tea-relationship-copy > p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.sommelier { background: var(--color-taupe-light); }
+.argentina-story { background: var(--color-burgundy); color: var(--color-paper); }
+.argentina-story > div > p { color: var(--color-paper-strong); }
+.selection-philosophy { background: var(--color-paper); }
+.hostess { align-items: center; background: var(--color-ivory); }
+.hostess-quote { padding: var(--space-6); border: 1px solid var(--color-gold); }
+.hostess-quote p { margin: 0 0 var(--space-5); font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: .98; }
+.hostess-quote span { color: var(--color-ink-soft); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.maria-closing { background: var(--color-leaf-dark); color: var(--color-paper); }
+.maria-closing > div > p { color: var(--color-paper-strong); }
+.maria-visit { background: var(--color-terracotta); color: var(--color-paper); }
+.maria-visit > div > p { color: var(--color-paper-strong); }
+.maria-visit .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
+
 @media (min-width: 48rem) {
   :root { --text-display: clamp(6rem, 11vw, 10rem); --text-h2: clamp(4.5rem, 7vw, 7.5rem); }
   .hero-actions { flex-direction: row; }
@@ -269,6 +338,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
   .mate-editorial-copy { display: flex; flex-direction: column; justify-content: center; }
   .delicacies-deep { display: grid; grid-template-columns: .8fr 1fr; gap: var(--space-7); }
   .delicacies-deep ul { margin-top: 0; }
+  .events-hero { grid-template-columns: 1.1fr .9fr; min-height: 48rem; }
+  .events-hero > div { min-height: 48rem; }
+  .next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { grid-template-columns: minmax(15rem, .75fr) minmax(25rem, 1fr); }
+  .event-system-card:not(.event-system-card--featured) { display: grid; grid-template-columns: .7fr 1fr auto; gap: var(--space-5); align-items: start; }
+  .event-system-card:not(.event-system-card--featured) h3 { margin-top: 0; }
+  .maria-hero { grid-template-columns: .9fr 1.1fr; min-height: 50rem; }
+  .maria-portrait, .maria-hero-copy { min-height: 50rem; }
+  .maria-intro, .name-story, .sommelier, .argentina-story, .selection-philosophy, .hostess, .maria-closing, .maria-visit { grid-template-columns: minmax(15rem, .75fr) minmax(25rem, 1fr); }
+  .tea-relationship { grid-template-columns: .85fr 1.15fr; min-height: 48rem; }
+  .tea-relationship-mark { min-height: 48rem; }
+  .tea-relationship-copy { display: flex; flex-direction: column; justify-content: center; }
 }
 
 @media (min-width: 64rem) {

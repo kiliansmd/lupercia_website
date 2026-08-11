@@ -11,14 +11,18 @@ eigene Seiten abgebildet werden können.
 | --- | --- | --- | --- |
 | `salon` | `#salon` | `/salon/` | vorhanden |
 | `tea` | `/tee-genuss/` | `/tee-genuss/` | eigenständige Seite vorhanden |
-| `events` | `#veranstaltungen` | `/veranstaltungen/` | vorhanden |
-| `maria` | `#maria` | `/maria/` | vorhanden |
+| `events` | `/veranstaltungen/` | `/veranstaltungen/` | eigenständige Seite vorhanden |
+| `maria` | `/maria/` | `/maria/` | eigenständige Seite vorhanden |
 | `gift-box` | `#geschenkbox` | `/geschenkbox/` | Teaser vorhanden, Konfiguration Coming soon |
 | `visit` | `#besuch` | `/besuch/` | vorhanden |
 
 Die Reihenfolge wird in `content/site-content.js` zentral gepflegt. Noch nicht
 verfügbare Angebote führen zu ehrlichen redaktionellen Platzhaltern innerhalb der
 Seite und nicht zu leeren Seiten oder scheinbar funktionsfähigen Formularen.
+
+Veranstaltungen besitzen bereits stabile Slugs. Spätere Detailseiten folgen dem
+Schema `/veranstaltungen/{slug}/`; bis solche Seiten tatsächlich umgesetzt sind,
+werden aus den redaktionellen Eventelementen keine leeren Detailseiten verlinkt.
 
 ## Header
 

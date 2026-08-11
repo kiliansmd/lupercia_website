@@ -56,8 +56,8 @@ const renderTeaOfTheDay = () => {
 const renderNextEvent = () => {
   const target = document.querySelector('[data-next-event]');
   if (!target) return;
-  const nextEvent = siteContent.events.find(({ status }) => status === 'announced') ?? siteContent.events[0];
-  target.replaceChildren(element('h3', '', nextEvent.title), element('p', '', nextEvent.date));
+  const nextEvent = siteContent.events.find(({ status }) => status === 'upcoming') ?? siteContent.events[0];
+  target.replaceChildren(element('h3', '', nextEvent.title), element('p', '', nextEvent.date ?? 'Weitere Termine folgen.'));
 };
 
 const renderProductWorld = () => {
@@ -101,9 +101,9 @@ const renderEvents = () => {
     }
 
     const heading = element('div');
-    heading.append(element('p', 'eyebrow', event.date), element('h3', '', event.title));
+    heading.append(element('p', 'eyebrow', event.date ?? event.recurrence ?? 'Weitere Termine folgen.'), element('h3', '', event.title));
     const detail = element('div');
-    if (event.summary) detail.append(element(event.featured ? 'strong' : 'p', '', event.summary));
+    if (event.shortDescription) detail.append(element(event.featured ? 'strong' : 'p', '', event.shortDescription));
     if (event.description) detail.append(element('p', '', event.description));
     article.append(heading, detail);
     return article;
@@ -127,6 +127,32 @@ const renderDelicacies = () => {
   target.replaceChildren(...siteContent.teaEnjoyment.delicacies.map((item) => element('li', '', item)));
 };
 
+const createEventArticle = (event, modifier = '') => {
+  const article = element('article', `event-system-card${modifier ? ` ${modifier}` : ''}`);
+  article.dataset.eventSlug = event.slug;
+  const meta = element('p', 'eyebrow', [event.category, event.date ?? event.recurrence ?? 'Weitere Termine folgen.', event.time].filter(Boolean).join(' · '));
+  const heading = element('h3', '', event.title);
+  const summary = element('p', '', event.shortDescription);
+  const status = element('span', `event-status event-status--${event.status}`, event.status === 'upcoming' ? 'Kommender Termin' : event.status === 'sold-out' ? 'Ausgebucht' : event.status === 'past' ? 'Vergangen' : 'Weitere Termine folgen');
+  article.append(meta, heading, summary, status);
+  return article;
+};
+
+const renderEventPage = () => {
+  const nextTarget = document.querySelector('[data-featured-event]');
+  const upcomingTarget = document.querySelector('[data-upcoming-events]');
+  const recurringTarget = document.querySelector('[data-recurring-events]');
+  if (!nextTarget && !upcomingTarget && !recurringTarget) return;
+
+  const upcoming = siteContent.events.filter(({ status }) => status === 'upcoming');
+  const recurring = siteContent.events.filter(({ recurrence }) => recurrence);
+  const nextEvent = upcoming.find(({ featured }) => featured) ?? upcoming[0];
+
+  if (nextTarget) nextTarget.replaceChildren(nextEvent ? createEventArticle(nextEvent, 'event-system-card--featured') : element('p', 'event-empty', 'Weitere Termine folgen.'));
+  if (upcomingTarget) upcomingTarget.replaceChildren(...(upcoming.length ? upcoming.map((event) => createEventArticle(event)) : [element('p', 'event-empty', 'Weitere Termine folgen.') ]));
+  if (recurringTarget) recurringTarget.replaceChildren(...recurring.map((event) => createEventArticle(event)));
+};
+
 renderTeaOfTheDay();
 renderNextEvent();
 renderProductWorld();
@@ -134,3 +160,4 @@ renderSalonOffer();
 renderEvents();
 renderTeaFamilies();
 renderDelicacies();
+renderEventPage();
