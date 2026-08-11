@@ -2,14 +2,15 @@
 
 ## Primäre Struktur
 
-Die Lupercia-Website bleibt aktuell eine statische One-Page-Erfahrung. Alle
-Navigationsziele besitzen jedoch stabile, sprechende IDs, die später ohne
-Umbenennung auf eigenständige Seiten abgebildet werden können.
+Die Lupercia-Website nutzt eine statische, schrittweise erweiterbare
+Mehrseitenarchitektur. „Tee & Genuss“ ist die erste eigenständige Unterseite;
+weitere Startseitenziele besitzen stabile IDs, die später ohne Umbenennung auf
+eigene Seiten abgebildet werden können.
 
 | ID | Aktuelles Ziel | Spätere Route | Status |
 | --- | --- | --- | --- |
 | `salon` | `#salon` | `/salon/` | vorhanden |
-| `tea` | `#tee-genuss` | `/tee-genuss/` | vorhanden |
+| `tea` | `/tee-genuss/` | `/tee-genuss/` | eigenständige Seite vorhanden |
 | `events` | `#veranstaltungen` | `/veranstaltungen/` | vorhanden |
 | `maria` | `#maria` | `/maria/` | vorhanden |
 | `gift-box` | `#geschenkbox` | `/geschenkbox/` | Teaser vorhanden, Konfiguration Coming soon |

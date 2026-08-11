@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "npm run vercel-build",
-    "vercel-build": "rm -rf dist && mkdir dist && cp index.html styles.css script.js dist/ && cp -R assets content dist/",
-    "check:content": "node --input-type=module -e \"import('./content/site-content.js').then(({ siteContent }) => { const expected = ['Salon', 'Tee & Genuss', 'Veranstaltungen', 'Maria', 'Geschenkbox', 'Besuch']; const valid = siteContent.navigation.map(({ label }) => label).join('|') === expected.join('|') && siteContent.locale.available.length === 1 && siteContent.productWorld.length === 4 && siteContent.events.length >= 6 && typeof siteContent.teaOfTheDay.active === 'boolean'; if (!valid) process.exit(1); })\"",
+    "vercel-build": "rm -rf dist && mkdir dist && cp index.html styles.css script.js dist/ && cp -R assets content tee-genuss dist/",
+    "check:content": "node --input-type=module -e \"import('./content/site-content.js').then(({ siteContent }) => { const expected = ['Salon', 'Tee & Genuss', 'Veranstaltungen', 'Maria', 'Geschenkbox', 'Besuch']; const valid = siteContent.navigation.map(({ label }) => label).join('|') === expected.join('|') && siteContent.locale.available.length === 1 && siteContent.productWorld.length === 4 && siteContent.teaEnjoyment.teaFamilies.length >= 5 && siteContent.teaEnjoyment.delicacies.length === 5 && siteContent.events.length >= 6 && typeof siteContent.teaOfTheDay.active === 'boolean'; if (!valid) process.exit(1); })\"",
     "check:styles": "node tools/check-styles.mjs",
     "typecheck": "node --check script.js && node --check content/site-content.js && node --check tools/check-styles.mjs",
     "lint": "npm run typecheck && npm run check:content && npm run check:styles",

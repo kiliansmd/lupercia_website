@@ -38,6 +38,7 @@ window.addEventListener('scroll', updateHeader, { passive: true });
 
 const renderTeaOfTheDay = () => {
   const target = document.querySelector('[data-today-tea]');
+  if (!target) return;
   const tea = siteContent.teaOfTheDay;
   target.replaceChildren();
 
@@ -54,12 +55,14 @@ const renderTeaOfTheDay = () => {
 
 const renderNextEvent = () => {
   const target = document.querySelector('[data-next-event]');
+  if (!target) return;
   const nextEvent = siteContent.events.find(({ status }) => status === 'announced') ?? siteContent.events[0];
   target.replaceChildren(element('h3', '', nextEvent.title), element('p', '', nextEvent.date));
 };
 
 const renderProductWorld = () => {
   const target = document.querySelector('[data-product-world]');
+  if (!target) return;
   const classNames = { tea: 'tea', mate: 'mate', tableware: 'tableware', delicacies: 'food' };
 
   target.replaceChildren(...siteContent.productWorld.map((product) => {
@@ -75,6 +78,7 @@ const renderProductWorld = () => {
 
 const renderSalonOffer = () => {
   const target = document.querySelector('[data-salon-offer]');
+  if (!target) return;
   target.replaceChildren(...siteContent.salonOffer.map((offer, index) => {
     const classes = [offer.priority === 'secondary' ? 'is-secondary' : '', offer.status === 'coming-soon' ? 'is-coming' : ''].filter(Boolean).join(' ');
     const item = element('li', classes);
@@ -86,6 +90,7 @@ const renderSalonOffer = () => {
 
 const renderEvents = () => {
   const target = document.querySelector('[data-events]');
+  if (!target) return;
   target.replaceChildren(...siteContent.events.map((event) => {
     const isDetailed = event.featured || event.description;
     const article = element('article', `event${event.featured ? ' event--featured' : ''}${isDetailed ? '' : ' event--compact'}`);
@@ -105,8 +110,27 @@ const renderEvents = () => {
   }));
 };
 
+const renderTeaFamilies = () => {
+  const target = document.querySelector('[data-tea-families]');
+  if (!target) return;
+
+  target.replaceChildren(...siteContent.teaEnjoyment.teaFamilies.map((family) => {
+    const article = element('article');
+    article.append(element('h3', '', family.name), element('p', '', family.note));
+    return article;
+  }));
+};
+
+const renderDelicacies = () => {
+  const target = document.querySelector('[data-delicacies]');
+  if (!target) return;
+  target.replaceChildren(...siteContent.teaEnjoyment.delicacies.map((item) => element('li', '', item)));
+};
+
 renderTeaOfTheDay();
 renderNextEvent();
 renderProductWorld();
 renderSalonOffer();
 renderEvents();
+renderTeaFamilies();
+renderDelicacies();

@@ -10,6 +10,8 @@
   --color-leaf-dark: #465247;
   --color-terracotta: #9e5843;
   --color-burgundy: #6e3d37;
+  --color-gold: #c9a34e;
+  --color-brand-black: #050604;
   --color-line: rgb(41 39 32 / 18%);
   --color-line-inverse: rgb(251 248 240 / 22%);
   --color-paper-strong: rgb(251 248 240 / 68%);
@@ -56,7 +58,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-terracott
 
 .section-shell { padding: var(--space-8) var(--gutter); }
 .eyebrow { margin: 0; font-size: var(--text-label); font-weight: 600; letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
-.wordmark { font-family: var(--font-display); font-size: 2rem; letter-spacing: -0.04em; line-height: 1; }
+.wordmark { display: inline-flex; align-items: center; width: 3.75rem; line-height: 1; }
+.brand-logo { width: 3.75rem; height: 3.75rem; object-fit: contain; border-radius: 50%; background: var(--color-brand-black); }
+.brand-logo--footer { width: 8.5rem; height: 8.5rem; }
+.footer-brand .wordmark { width: 8.5rem; }
 .body-large, .intro { max-width: var(--copy-max); font-size: var(--text-body-large); line-height: 1.55; }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
 
@@ -73,7 +78,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
 .text-link:hover::after { transform: scaleX(.35); }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 20; display: grid; grid-template-columns: 1fr auto; align-items: center; min-height: 4.5rem; padding-inline: var(--gutter); border-bottom: 1px solid var(--color-line); background: color-mix(in srgb, var(--color-ivory) 92%, transparent); transition: min-height var(--duration-fast), background-color var(--duration-fast); }
+.site-header { position: sticky; top: 0; z-index: 20; display: grid; grid-template-columns: 1fr auto; align-items: center; min-height: 5rem; padding-inline: var(--gutter); border-bottom: 1px solid color-mix(in srgb, var(--color-gold) 45%, transparent); background: color-mix(in srgb, var(--color-ivory) 94%, transparent); transition: min-height var(--duration-fast), background-color var(--duration-fast); }
 .site-header.is-scrolled { min-height: 4rem; background: var(--color-paper); }
 .site-header nav, .booking-link { display: none; }
 .menu-button { position: relative; display: block; width: 2rem; height: 2rem; padding: 0; border: 0; background: transparent; cursor: pointer; }
@@ -189,7 +194,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
 .reservation-pending small { text-align: right; }
 
 /* Footer */
-.site-footer { display: grid; gap: var(--space-5); min-height: 20rem; padding: var(--space-7) var(--gutter) var(--space-5); background: var(--color-ink); color: var(--color-paper); }
+.site-footer { display: grid; gap: var(--space-5); min-height: 20rem; padding: var(--space-7) var(--gutter) var(--space-5); border-top: 1px solid var(--color-gold); background: var(--color-brand-black); color: var(--color-paper); }
 .site-footer p { margin: 0; }
 .footer-brand p { margin-top: var(--space-2); color: var(--color-paper-strong); font-family: var(--font-display); font-size: 1.25rem; font-style: italic; }
 .footer-details { display: grid; gap: var(--space-4); padding-block: var(--space-5); border-block: 1px solid var(--color-line-inverse); }
@@ -198,6 +203,46 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
 .footer-navigation { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1); font-size: var(--text-small); }
 .footer-legal { display: flex; flex-wrap: wrap; gap: var(--space-4); color: var(--color-paper-strong); font-size: var(--text-small); }
 .site-footer small { align-self: end; color: var(--color-paper-subtle); }
+
+/* Tee & Genuss — editorial product world */
+.site-header [aria-current="page"] { font-weight: 600; }
+.tea-hero { display: grid; background: var(--color-paper); }
+.tea-hero-copy { display: flex; flex-direction: column; justify-content: flex-end; min-height: 34rem; padding: var(--space-7) var(--gutter); }
+.tea-hero h1 { max-width: 8ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
+.tea-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
+.tea-hero-media { min-height: 28rem; overflow: hidden; background: var(--color-leaf); }
+.tea-hero-media img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; transition: transform 1.2s var(--ease-editorial); }
+.tea-hero-media:hover img { transform: scale(1.015); }
+.tea-core, .bio-quality, .daily-deep, .tableware-deep, .salon-drinks, .tea-time-deep, .tea-visit { display: grid; gap: var(--space-7); }
+.tea-core h2, .bio-quality h2, .mate-editorial h2, .daily-deep h2, .tableware-deep h2, .delicacies-deep h2, .salon-drinks h2, .tea-time-deep h2, .tea-visit h2 { max-width: 9ch; margin: var(--space-5) 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
+.tea-core { background: var(--color-ivory); }
+.tea-core > div > .body-large, .bio-quality > div > p, .daily-deep > div > p, .tableware-deep .body-large, .salon-drinks > div > p, .tea-time-deep p, .tea-visit p { max-width: var(--copy-max); color: var(--color-ink-soft); }
+.tea-families { margin-top: var(--space-6); border-top: 1px solid var(--color-ink); }
+.tea-families article { display: grid; gap: var(--space-1); padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line); }
+.tea-families h3 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.25rem); }
+.tea-families p { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); }
+.bio-quality { background: var(--color-paper); }
+.mate-editorial { display: grid; background: var(--color-burgundy); color: var(--color-paper); }
+.mate-editorial-art { position: relative; min-height: 31rem; overflow: hidden; background: var(--color-taupe); }
+.mate-editorial-art::before { position: absolute; bottom: 12%; left: 50%; width: min(66%, 24rem); aspect-ratio: 1.25; border-radius: .75rem .75rem 50% 50%; background: var(--color-burgundy); box-shadow: inset 0 3.5rem 0 var(--color-leaf-dark); content: ""; transform: translateX(-50%) rotate(-3deg); }
+.mate-editorial-art::after { position: absolute; bottom: 27%; left: 58%; width: .7rem; height: 22rem; border-radius: 1rem; background: var(--color-paper); content: ""; transform: rotate(13deg); }
+.mate-editorial-art span { position: absolute; right: var(--space-5); bottom: var(--space-4); z-index: 2; color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; }
+.mate-editorial-copy { padding: var(--space-8) var(--gutter); }
+.mate-editorial-copy p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.daily-deep { background: var(--color-taupe-light); }
+.daily-deep .tea-daily { align-self: end; }
+.tableware-deep { align-items: center; background: var(--color-paper); }
+.tableware-mark { display: grid; place-items: center; min-height: 28rem; border: 1px solid var(--color-line); background: var(--color-ivory); }
+.tableware-mark span { font-family: var(--font-display); font-size: clamp(5rem, 17vw, 9rem); font-style: italic; letter-spacing: -.05em; line-height: .7; text-align: center; }
+.delicacies-deep { background: var(--color-ink); color: var(--color-paper); }
+.delicacies-deep ul { margin: var(--space-7) 0 0; padding: 0; border-top: 1px solid var(--color-line-inverse); list-style: none; }
+.delicacies-deep li { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line-inverse); font-family: var(--font-display); font-size: clamp(1.65rem, 5vw, 3rem); }
+.salon-drinks { background: var(--color-taupe-light); }
+.tea-time-deep { background: var(--color-ivory); }
+.tea-time-deep .button { margin-top: var(--space-4); }
+.tea-visit { background: var(--color-terracotta); color: var(--color-paper); }
+.tea-visit p { color: var(--color-paper-strong); }
+.tea-visit .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
 
 @media (min-width: 48rem) {
   :root { --text-display: clamp(6rem, 11vw, 10rem); --text-h2: clamp(4.5rem, 7vw, 7.5rem); }
@@ -215,6 +260,15 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
   .footer-details { grid-template-columns: repeat(3, 1fr); }
   .site-footer { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
   .footer-details, .site-footer small { grid-column: 1 / -1; }
+  .tea-hero { grid-template-columns: .9fr 1.1fr; min-height: 48rem; }
+  .tea-hero-copy, .tea-hero-media { min-height: 48rem; }
+  .tea-core, .bio-quality, .daily-deep, .tableware-deep, .salon-drinks, .tea-time-deep, .tea-visit { grid-template-columns: minmax(15rem, .8fr) minmax(24rem, 1fr); }
+  .tea-families article { grid-template-columns: .65fr 1fr; align-items: baseline; }
+  .mate-editorial { grid-template-columns: .85fr 1.15fr; min-height: 48rem; }
+  .mate-editorial-art { min-height: 48rem; }
+  .mate-editorial-copy { display: flex; flex-direction: column; justify-content: center; }
+  .delicacies-deep { display: grid; grid-template-columns: .8fr 1fr; gap: var(--space-7); }
+  .delicacies-deep ul { margin-top: 0; }
 }
 
 @media (min-width: 64rem) {

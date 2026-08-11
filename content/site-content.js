@@ -15,7 +15,7 @@ export const siteContent = Object.freeze({
   },
   navigation: [
     { id: 'salon', label: 'Salon', href: '#salon', status: 'available' },
-    { id: 'tea', label: 'Tee & Genuss', href: '#tee-genuss', status: 'available' },
+    { id: 'tea', label: 'Tee & Genuss', href: '/tee-genuss/', status: 'available' },
     { id: 'events', label: 'Veranstaltungen', href: '#veranstaltungen', status: 'available' },
     { id: 'maria', label: 'Maria', href: '#maria', status: 'available' },
     { id: 'gift-box', label: 'Geschenkbox', href: '#geschenkbox', status: 'coming-soon' },
@@ -28,6 +28,25 @@ export const siteContent = Object.freeze({
     image: null,
     active: false,
     fallback: 'Die heutige Auswahl erfahren Sie direkt im Salon.',
+  },
+  teaEnjoyment: {
+    positioning: 'Tee steht im Mittelpunkt. Argentinien gibt Lupercia seine persönliche Handschrift.',
+    teaFamilies: [
+      { name: 'Schwarzer Tee', note: 'Kräftig, malzig oder fein und duftig.' },
+      { name: 'Grüner Tee', note: 'Frisch, klar und vielschichtig.' },
+      { name: 'Weißer Tee', note: 'Sanft, floral und zurückhaltend.' },
+      { name: 'Kräuter & Früchte', note: 'Duftende Mischungen für jede Tageszeit.' },
+      { name: 'Weitere Entdeckungen', note: 'Wechselnde Sorten, persönlich ausgewählt.' },
+    ],
+    tableware: {
+      regions: ['England', 'Deutschland', 'weitere europäische Hersteller'],
+      status: 'curated-selection',
+    },
+    delicacies: ['Scones mit Clotted Cream', 'Argentinisches Gebäck', 'Sandwiches', 'Marmelade', 'Hausgemachter Kuchen'],
+    teaTime: {
+      reservation: null,
+      status: 'coming-soon',
+    },
   },
   productWorld: [
     {

@@ -4,6 +4,8 @@ const css = await readFile(new URL('../styles.css', import.meta.url), 'utf8');
 
 const requiredPatterns = [
   ['design tokens', ':root'],
+  ['brand gold token', '--color-gold'],
+  ['brand logo', '.brand-logo'],
   ['mobile baseline', '.site-header'],
   ['tablet breakpoint', '@media (min-width: 48rem)'],
   ['desktop breakpoint', '@media (min-width: 64rem)'],
@@ -16,6 +18,9 @@ const requiredPatterns = [
   ['hero media', '.hero-media'],
   ['editorial products', '.product-editorial'],
   ['event list', '.event-list'],
+  ['tea enjoyment hero', '.tea-hero'],
+  ['tea families', '.tea-families'],
+  ['mate editorial', '.mate-editorial'],
 ];
 
 const missing = requiredPatterns
