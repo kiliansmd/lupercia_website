@@ -25,7 +25,7 @@ statt die Seite in ein Framework zu migrieren.
 | Header | Dreispaltiger Desktop-Header mit Wortmarke, Anchor-Navigation und CTA; unter 800 px wird daraus ein per JavaScript gesteuertes Vollbildmenü. |
 | Footer | Wortmarke, Claim, Social-/Rechtslinks und Copyright; Impressum, Datenschutz und Instagram sind aktuell nur `#`-Platzhalter. |
 | Startseite | Hero, Geschichte/Manifest, Teekategorien, Mate-Feature, Besuch/Kontakt und Footer. |
-| Assets | Keine Bild-, Logo- oder Icon-Dateien. Teekanne, Tasse und Mate werden vollständig mit CSS gezeichnet. |
+| Assets | Eine eigens für Lupercia angelegte SVG-Heroillustration liegt unter `assets/`; es werden keine generischen Stockfotos eingesetzt. |
 | Breakpoints | Ein Layout-Breakpoint bei `800px`; Fluid Type über `clamp()`. Die CSS-Basis ist aktuell eher Desktop-first. |
 | Animationen | Sanfte `rise`-Animation im Hero, nur bei `prefers-reduced-motion: no-preference`; Smooth Scrolling ist global aktiv. |
 | Formulare/Funktionen | Kein Formular, Shop oder Reservierungssystem. CTAs verwenden Sprungmarken, `mailto:` und `tel:`. Das einzige interaktive Verhalten ist das mobile Menü. |
@@ -64,6 +64,10 @@ statt die Seite in ein Framework zu migrieren.
    defensive Initialisierung und Tastatursteuerung fehlen.
 9. Inhalte, Gestaltung und CSS-Illustrationen sind stark gekoppelt. Neue Sektionen
    sollten aus kleinen, benannten Mustern statt weiteren Seitensonderfällen entstehen.
+
+> Fortschritt aus Prompt 2: Die Punkte 1 und 2 wurden mit einer lesbaren,
+> mobile-first aufgebauten CSS-Datei und zentralen Farb-, Typografie-, Spacing- und
+> Motion-Tokens bearbeitet. Die verbleibenden Punkte bleiben Teil der Folgeschritte.
 
 ## 4. Vergleich mit der Live-Version
 
@@ -145,4 +149,3 @@ Umsetzungsschritte stabile Einstiegspunkte erhalten.
    `dist/` kopieren und dort prüfen.
 6. **Qualität:** nach jedem Schritt `npm run build`, `npm run typecheck`,
    `npm run lint` und `npm test` ausführen.
-
