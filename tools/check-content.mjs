@@ -17,7 +17,10 @@ for (const event of siteContent.events) {
   slugs.add(event.slug);
 }
 
-if (siteContent.locale.available.length !== 1 || siteContent.productWorld.length !== 4 || siteContent.teaEnjoyment.teaFamilies.length < 5 || siteContent.teaEnjoyment.delicacies.length !== 5 || typeof siteContent.teaOfTheDay.active !== 'boolean' || siteContent.maria.roles.length !== 4) {
+const expectedActions = ['Tisch reservieren', 'Event ansehen', 'Event anmelden', 'Geschenkbox anfragen', 'Lupercia besuchen'];
+const actualActions = [siteContent.conversionActions.reservation.label, siteContent.conversionActions.event.viewLabel, siteContent.conversionActions.event.bookingLabel, siteContent.conversionActions.giftBox.label, siteContent.conversionActions.visit.label];
+
+if (siteContent.locale.available.length !== 1 || siteContent.productWorld.length !== 4 || siteContent.teaEnjoyment.teaFamilies.length < 5 || siteContent.teaEnjoyment.delicacies.length !== 5 || typeof siteContent.teaOfTheDay.active !== 'boolean' || siteContent.maria.roles.length !== 4 || siteContent.salonVisit.map.consentRequired !== true || actualActions.join('|') !== expectedActions.join('|')) {
   throw new Error('Core content model is incomplete.');
 }
 

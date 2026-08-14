@@ -14,12 +14,12 @@ export const siteContent = Object.freeze({
     planned: ['en', 'es'],
   },
   navigation: [
-    { id: 'salon', label: 'Salon', href: '#salon', status: 'available' },
+    { id: 'salon', label: 'Salon', href: '/salon/', status: 'available' },
     { id: 'tea', label: 'Tee & Genuss', href: '/tee-genuss/', status: 'available' },
     { id: 'events', label: 'Veranstaltungen', href: '/veranstaltungen/', status: 'available' },
     { id: 'maria', label: 'Maria', href: '/maria/', status: 'available' },
     { id: 'gift-box', label: 'Geschenkbox', href: '#geschenkbox', status: 'coming-soon' },
-    { id: 'visit', label: 'Besuch', href: '#besuch', status: 'available' },
+    { id: 'visit', label: 'Besuch', href: '/salon/#besuch', status: 'available' },
   ],
   eventSystem: {
     categories: ['Verkostung', 'Workshop', 'Teerunde', 'Frauenrunde', 'Leserunde', 'Tango', 'Seminar', 'Sonstiges'],
@@ -36,6 +36,22 @@ export const siteContent = Object.freeze({
       nameCarriesFamilyMemory: true,
       argentinianConnection: true,
     },
+  },
+  salonVisit: {
+    roomPhotography: { src: null, alt: null, status: 'awaiting-original' },
+    address: { value: null, status: 'coming-soon' },
+    openingHours: { value: null, status: 'coming-soon' },
+    phone: { label: 'Telefon', href: null, status: 'coming-soon' },
+    email: { label: 'E-Mail', href: null, status: 'coming-soon' },
+    reservation: { href: null, status: 'coming-soon' },
+    accessibility: { value: null, status: 'coming-soon' },
+    map: { embed: null, provider: null, consentRequired: true, status: 'not-configured' },
+  },
+  conversionActions: {
+    reservation: { label: 'Tisch reservieren', href: null, status: 'coming-soon' },
+    event: { viewLabel: 'Event ansehen', bookingLabel: 'Event anmelden' },
+    giftBox: { label: 'Geschenkbox anfragen', href: null, status: 'coming-soon' },
+    visit: { label: 'Lupercia besuchen', href: '/salon/#besuch', status: 'available' },
   },
   teaOfTheDay: {
     name: null,

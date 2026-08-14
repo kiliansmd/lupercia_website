@@ -19,6 +19,8 @@ Alle produktiv verwendeten Werte stehen in `:root` von `styles.css`.
 - `--color-taupe` und `--color-taupe-light`: ruhige redaktionelle Flächen
 - `--color-leaf` und `--color-leaf-dark`: gedeckte natürliche Grünakzente
 - `--color-terracotta` und `--color-burgundy`: sparsame Markenakzente
+- `--color-gold` und `--color-gold-soft`: aus dem Lupercia-Siegel abgeleitete
+  Akzente für Fokus, feine Linien und kleine redaktionelle Markierungen
 - `--color-line` und `--color-line-inverse`: subtile Trennlinien
 
 Reines Schwarz und Weiß werden vermieden. Farben dürfen nicht als knallige
@@ -31,6 +33,8 @@ Produktcodes oder großflächige Verläufe eingesetzt werden.
 - Rollen: Display, H1, H2, H3, Body Large, Body, Small und Label/Navigation.
 - `clamp()` sorgt für fließende Größen zwischen Mobile und Desktop.
 - Große Headlines bleiben kurz und erhalten bewusst enge Zeilenhöhe und Laufweite.
+- Überschriften nutzen balancierten Zeilenumbruch; Fließtext wird mit ruhiger
+  Laufweite, großzügiger Zeilenhöhe und optimiertem Umbruch gesetzt.
 
 ### Spacing und Layout
 

@@ -135,6 +135,15 @@ const createEventArticle = (event, modifier = '') => {
   const summary = element('p', '', event.shortDescription);
   const status = element('span', `event-status event-status--${event.status}`, event.status === 'upcoming' ? 'Kommender Termin' : event.status === 'sold-out' ? 'Ausgebucht' : event.status === 'past' ? 'Vergangen' : 'Weitere Termine folgen');
   article.append(meta, heading, summary, status);
+  if (event.status === 'upcoming') {
+    if (event.bookingUrl) {
+      const bookingLink = element('a', 'event-action', siteContent.conversionActions.event.bookingLabel);
+      bookingLink.href = event.bookingUrl;
+      article.append(bookingLink);
+    } else {
+      article.append(element('span', 'event-action event-action--pending', `${siteContent.conversionActions.event.bookingLabel} · coming soon`));
+    }
+  }
   return article;
 };
 

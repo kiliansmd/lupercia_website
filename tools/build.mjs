@@ -10,7 +10,7 @@ for (const file of ['index.html', 'styles.css', 'script.js']) {
   await cp(new URL(file, sourceDirectory), new URL(file, outputDirectory));
 }
 
-for (const directory of ['content', 'tee-genuss', 'veranstaltungen', 'maria']) {
+for (const directory of ['content', 'tee-genuss', 'veranstaltungen', 'maria', 'salon']) {
   await cp(new URL(`${directory}/`, sourceDirectory), new URL(`${directory}/`, outputDirectory), { recursive: true });
 }
 

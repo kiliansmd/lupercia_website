@@ -9,12 +9,12 @@ eigene Seiten abgebildet werden können.
 
 | ID | Aktuelles Ziel | Spätere Route | Status |
 | --- | --- | --- | --- |
-| `salon` | `#salon` | `/salon/` | vorhanden |
+| `salon` | `/salon/` | `/salon/` | eigenständige Seite vorhanden |
 | `tea` | `/tee-genuss/` | `/tee-genuss/` | eigenständige Seite vorhanden |
 | `events` | `/veranstaltungen/` | `/veranstaltungen/` | eigenständige Seite vorhanden |
 | `maria` | `/maria/` | `/maria/` | eigenständige Seite vorhanden |
 | `gift-box` | `#geschenkbox` | `/geschenkbox/` | Teaser vorhanden, Konfiguration Coming soon |
-| `visit` | `#besuch` | `/besuch/` | vorhanden |
+| `visit` | `/salon/#besuch` | `/salon/#besuch` | in Salonseite integriert |
 
 Die Reihenfolge wird in `content/site-content.js` zentral gepflegt. Noch nicht
 verfügbare Angebote führen zu ehrlichen redaktionellen Platzhaltern innerhalb der
