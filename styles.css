@@ -1,19 +1,22 @@
 /* Lupercia — warm editorial tea salon */
 :root {
-  --color-ivory: #f4efe4;
-  --color-paper: #fcf9f1;
-  --color-ink: #29261f;
-  --color-ink-soft: #615b50;
-  --color-taupe: #c9bba7;
-  --color-taupe-light: #e1d7c8;
-  --color-leaf: #747d68;
-  --color-leaf-dark: #414e43;
-  --color-terracotta: #a45d46;
-  --color-burgundy: #70413b;
-  --color-gold: #c8a148;
-  --color-gold-soft: #e2c978;
-  --color-brand-black: #050604;
-  --color-line: rgb(41 39 32 / 18%);
+  --color-ivory: #f8f2e8;
+  --color-paper: #fffaf2;
+  --color-ink: #332d26;
+  --color-ink-soft: #6c6256;
+  --color-taupe: #d8c6ae;
+  --color-taupe-light: #eee2d2;
+  --color-leaf: #87927a;
+  --color-leaf-dark: #586657;
+  --color-terracotta: #b66d51;
+  --color-burgundy: #865149;
+  --color-gold: #caa451;
+  --color-gold-soft: #efd98d;
+  --color-sage-wash: #e7eadf;
+  --color-peach-wash: #f3dfd2;
+  --color-deep-warm: #3c352d;
+  --color-brand-black: #17140f;
+  --color-line: rgb(51 45 38 / 16%);
   --color-line-inverse: rgb(251 248 240 / 22%);
   --color-paper-strong: rgb(251 248 240 / 68%);
   --color-paper-subtle: rgb(251 248 240 / 46%);
@@ -59,7 +62,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold); ou
 ::selection { background: var(--color-gold-soft); color: var(--color-ink); }
 
 .section-shell { padding: var(--space-8) var(--gutter); }
-.eyebrow { margin: 0; color: var(--color-terracotta); font-size: var(--text-label); font-weight: 600; letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
+.eyebrow { margin: 0; color: var(--color-burgundy); font-size: var(--text-label); font-weight: 600; letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
 .wordmark { display: inline-flex; align-items: center; width: 3.75rem; line-height: 1; }
 .brand-logo { width: 3.75rem; height: 3.75rem; object-fit: contain; border-radius: 50%; background: var(--color-brand-black); }
 .brand-logo--footer { width: 8.5rem; height: 8.5rem; }
@@ -100,7 +103,7 @@ p { text-wrap: pretty; }
 /* Hero */
 .hero { position: relative; min-height: calc(100svh - 4.5rem); overflow: hidden; background: var(--color-leaf); color: var(--color-paper); }
 .hero-media { position: absolute; inset: 0; }
-.hero-media::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(41 39 32 / 72%) 0%, rgb(41 39 32 / 35%) 58%, rgb(41 39 32 / 8%) 100%); content: ""; }
+.hero-media::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(51 45 38 / 64%) 0%, rgb(51 45 38 / 27%) 58%, rgb(51 45 38 / 5%) 100%); content: ""; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-editorial); }
 .hero:hover .hero-media img { transform: scale(1.015); }
 .hero-overlay { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; min-height: calc(100svh - 4.5rem); padding: var(--space-7) var(--gutter) 8rem; }
@@ -119,12 +122,12 @@ p { text-wrap: pretty; }
 .tea-daily { display: grid; gap: var(--space-1); margin-top: var(--space-6); padding-top: var(--space-3); border-top: 1px solid var(--color-line); }
 .tea-daily span { font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .tea-daily strong { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; }
-.next-event { align-self: end; padding: var(--space-5); border-top: 1px solid var(--color-ink); background: var(--color-taupe-light); }
+.next-event { align-self: end; padding: var(--space-5); border-top: 1px solid var(--color-gold); background: var(--color-peach-wash); }
 .next-event h3 { margin: var(--space-5) 0 var(--space-1); font-size: var(--text-h3); line-height: 1; }
 .next-event [data-next-event] p { margin-top: 0; }
 
 /* Maria */
-.maria { display: grid; gap: var(--space-7); background: var(--color-ivory); }
+.maria { display: grid; gap: var(--space-7); background: var(--color-sage-wash); }
 .portrait-art { position: relative; min-height: 34rem; overflow: hidden; background: var(--color-burgundy); }
 .portrait-art::before { position: absolute; top: 12%; left: 50%; width: 58%; aspect-ratio: .72; border-radius: 48% 48% 18% 18%; background: var(--color-taupe); content: ""; transform: translateX(-50%); }
 .portrait-art::after { position: absolute; right: -10%; bottom: -5%; left: -10%; height: 47%; border-radius: 50% 50% 0 0; background: var(--color-leaf-dark); content: ""; }
@@ -136,14 +139,14 @@ p { text-wrap: pretty; }
 .maria-copy .text-link { margin-top: var(--space-5); }
 
 /* Product world */
-.product-world { background: var(--color-ink); color: var(--color-paper); }
+.product-world { background: var(--color-deep-warm); color: var(--color-paper); }
 .section-heading h2 { max-width: 10ch; }
 .product-editorial { display: grid; }
 .product-story { min-height: 30rem; padding: var(--space-6) var(--gutter); border-top: 1px solid var(--color-line-inverse); }
 .product-story h3 { max-width: 10ch; margin: clamp(7rem, 20vw, 12rem) 0 var(--space-4); font-size: var(--text-h3); line-height: .98; }
 .product-story > p:last-child { max-width: 30rem; color: var(--color-paper-strong); }
 .product-story--tea { background: var(--color-leaf-dark); }
-.product-story--mate { background: var(--color-burgundy); }
+.product-story--mate { background: var(--color-terracotta); }
 .product-story--tableware { background: var(--color-taupe); color: var(--color-ink); }
 .product-story--tableware > p:last-child { color: var(--color-ink-soft); }
 .product-story--food { background: var(--color-paper); color: var(--color-ink); }
@@ -159,7 +162,7 @@ p { text-wrap: pretty; }
 .certification-space p { margin-bottom: 0; color: var(--color-ink-soft); font-size: var(--text-small); }
 
 /* Salon */
-.salon { display: grid; gap: var(--space-7); background: var(--color-taupe-light); }
+.salon { display: grid; gap: var(--space-7); background: var(--color-peach-wash); }
 .salon h2 { max-width: 9ch; }
 .salon-copy > p:last-child { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .salon-menu { margin: 0; padding: 0; border-top: 1px solid var(--color-ink); list-style: none; }
@@ -180,14 +183,14 @@ p { text-wrap: pretty; }
 .event--compact span { color: var(--color-ink-soft); font-size: var(--text-small); }
 
 /* Gift, breakfast, visit */
-.gift { display: grid; gap: var(--space-7); background: var(--color-paper); }
+.gift { display: grid; gap: var(--space-7); background: var(--color-sage-wash); }
 .gift-mark { display: grid; place-items: center; min-height: 23rem; background: var(--color-terracotta); }
 .gift-mark span { color: var(--color-paper); font-family: var(--font-display); font-size: 13rem; font-style: italic; line-height: 1; }
 .gift h2 { max-width: 10ch; }
 .gift .button { margin-top: var(--space-4); }
-.breakfast { display: grid; gap: var(--space-6); background: var(--color-leaf-dark); color: var(--color-paper); }
+.breakfast { display: grid; gap: var(--space-6); background: var(--color-sage-wash); color: var(--color-ink); }
 .breakfast h2 { max-width: 10ch; margin-top: 0; }
-.breakfast .body-large { color: var(--color-paper-strong); }
+.breakfast .body-large { color: var(--color-ink-soft); }
 .visit { background: var(--color-paper); }
 .visit h2 { max-width: 9ch; }
 .visit-info { margin-top: var(--space-7); border-top: 1px solid var(--color-line); }
@@ -226,19 +229,19 @@ p { text-wrap: pretty; }
 .tea-families h3 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.25rem); }
 .tea-families p { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); }
 .bio-quality { background: var(--color-paper); }
-.mate-editorial { display: grid; background: var(--color-burgundy); color: var(--color-paper); }
+.mate-editorial { display: grid; background: var(--color-peach-wash); color: var(--color-ink); }
 .mate-editorial-art { position: relative; min-height: 31rem; overflow: hidden; background: var(--color-taupe); }
 .mate-editorial-art::before { position: absolute; bottom: 12%; left: 50%; width: min(66%, 24rem); aspect-ratio: 1.25; border-radius: .75rem .75rem 50% 50%; background: var(--color-burgundy); box-shadow: inset 0 3.5rem 0 var(--color-leaf-dark); content: ""; transform: translateX(-50%) rotate(-3deg); }
 .mate-editorial-art::after { position: absolute; bottom: 27%; left: 58%; width: .7rem; height: 22rem; border-radius: 1rem; background: var(--color-paper); content: ""; transform: rotate(13deg); }
 .mate-editorial-art span { position: absolute; right: var(--space-5); bottom: var(--space-4); z-index: 2; color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; }
 .mate-editorial-copy { padding: var(--space-8) var(--gutter); }
-.mate-editorial-copy p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.mate-editorial-copy p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .daily-deep { background: var(--color-taupe-light); }
 .daily-deep .tea-daily { align-self: end; }
 .tableware-deep { align-items: center; background: var(--color-paper); }
 .tableware-mark { display: grid; place-items: center; min-height: 28rem; border: 1px solid var(--color-line); background: var(--color-ivory); }
 .tableware-mark span { font-family: var(--font-display); font-size: clamp(5rem, 17vw, 9rem); font-style: italic; letter-spacing: -.05em; line-height: .7; text-align: center; }
-.delicacies-deep { background: var(--color-ink); color: var(--color-paper); }
+.delicacies-deep { background: var(--color-deep-warm); color: var(--color-paper); }
 .delicacies-deep ul { margin: var(--space-7) 0 0; padding: 0; border-top: 1px solid var(--color-line-inverse); list-style: none; }
 .delicacies-deep li { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line-inverse); font-family: var(--font-display); font-size: clamp(1.65rem, 5vw, 3rem); }
 .salon-drinks { background: var(--color-taupe-light); }
@@ -273,12 +276,12 @@ p { text-wrap: pretty; }
 .upcoming-events { background: var(--color-paper); }
 .upcoming-events header > p:last-child { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .recurring-events { background: var(--color-ivory); }
-.event-formats { background: var(--color-ink); color: var(--color-paper); }
-.format-lines { border-top: 1px solid var(--color-line-inverse); }
-.format-lines article { padding: var(--space-5) 0; border-bottom: 1px solid var(--color-line-inverse); }
-.format-lines span { color: var(--color-paper-subtle); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.event-formats { background: var(--color-taupe-light); color: var(--color-ink); }
+.format-lines { border-top: 1px solid var(--color-line); }
+.format-lines article { padding: var(--space-5) 0; border-bottom: 1px solid var(--color-line); }
+.format-lines span { color: var(--color-terracotta); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .format-lines h3 { margin: var(--space-2) 0; font-size: clamp(1.8rem, 6vw, 3rem); }
-.format-lines p { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.format-lines p { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .private-events { background: var(--color-paper); }
 .private-events > div > p { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .events-cta { background: var(--color-terracotta); color: var(--color-paper); }
@@ -299,21 +302,21 @@ p { text-wrap: pretty; }
 .maria-intro > div > p, .name-story > div > p, .sommelier > div > p, .argentina-story > div > p, .selection-philosophy > div > p, .hostess > div > p, .maria-closing > div > p, .maria-visit > div > p { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .maria-intro { background: var(--color-ivory); }
 .name-story { background: var(--color-paper); }
-.tea-relationship { display: grid; background: var(--color-leaf-dark); color: var(--color-paper); }
+.tea-relationship { display: grid; background: var(--color-sage-wash); color: var(--color-ink); }
 .tea-relationship-mark { display: grid; place-items: center; min-height: 31rem; background: var(--color-taupe); color: var(--color-ink); }
 .tea-relationship-mark span { font-family: var(--font-display); font-size: clamp(5rem, 18vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; transform: rotate(-4deg); }
 .tea-relationship-copy { padding: var(--space-8) var(--gutter); }
-.tea-relationship-copy > p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-paper-strong); }
+.tea-relationship-copy > p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .sommelier { background: var(--color-taupe-light); }
-.argentina-story { background: var(--color-burgundy); color: var(--color-paper); }
-.argentina-story > div > p { color: var(--color-paper-strong); }
+.argentina-story { background: var(--color-peach-wash); color: var(--color-ink); }
+.argentina-story > div > p { color: var(--color-ink-soft); }
 .selection-philosophy { background: var(--color-paper); }
 .hostess { align-items: center; background: var(--color-ivory); }
 .hostess-quote { padding: var(--space-6); border: 1px solid var(--color-gold); }
 .hostess-quote p { margin: 0 0 var(--space-5); font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: .98; }
 .hostess-quote span { color: var(--color-ink-soft); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
-.maria-closing { background: var(--color-leaf-dark); color: var(--color-paper); }
-.maria-closing > div > p { color: var(--color-paper-strong); }
+.maria-closing { background: var(--color-sage-wash); color: var(--color-ink); }
+.maria-closing > div > p { color: var(--color-ink-soft); }
 .maria-visit { background: var(--color-terracotta); color: var(--color-paper); }
 .maria-visit > div > p { color: var(--color-paper-strong); }
 .maria-visit .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
@@ -337,14 +340,14 @@ p { text-wrap: pretty; }
 .salon-teatime .button { margin-top: var(--space-4); }
 .salon-daily { background: var(--color-taupe-light); }
 .salon-daily .tea-daily { align-self: end; }
-.salon-taste { background: var(--color-burgundy); color: var(--color-paper); }
-.salon-taste > div > p { color: var(--color-paper-strong); }
+.salon-taste { background: var(--color-peach-wash); color: var(--color-ink); }
+.salon-taste > div > p { color: var(--color-ink-soft); }
 .salon-beverages { background: var(--color-paper); }
-.salon-expect { background: var(--color-leaf-dark); color: var(--color-paper); }
-.salon-expect ul { margin: 0; padding: 0; border-top: 1px solid var(--color-line-inverse); list-style: none; }
-.salon-expect li { display: grid; gap: var(--space-2); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-line-inverse); }
+.salon-expect { background: var(--color-sage-wash); color: var(--color-ink); }
+.salon-expect ul { margin: 0; padding: 0; border-top: 1px solid var(--color-line); list-style: none; }
+.salon-expect li { display: grid; gap: var(--space-2); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-line); }
 .salon-expect li span { font-family: var(--font-display); font-size: 2rem; }
-.salon-expect li p { margin: 0; color: var(--color-paper-strong); }
+.salon-expect li p { margin: 0; color: var(--color-ink-soft); }
 .salon-visit { background: var(--color-ivory); }
 .visit-grid { display: grid; border-top: 1px solid var(--color-line); }
 .visit-grid article { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-line); }
@@ -355,17 +358,10 @@ p { text-wrap: pretty; }
 /* Harmonized editorial rhythm */
 .hero .eyebrow,
 .product-world .eyebrow,
-.mate-editorial .eyebrow,
 .delicacies-deep .eyebrow,
-.breakfast .eyebrow,
-.event-formats .eyebrow,
 .events-cta .eyebrow,
-.tea-relationship .eyebrow,
-.argentina-story .eyebrow,
-.maria-closing .eyebrow,
 .maria-visit .eyebrow,
-.salon-taste .eyebrow,
-.salon-expect .eyebrow {
+.tea-visit .eyebrow {
   color: var(--color-gold-soft);
 }
 

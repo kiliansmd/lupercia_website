@@ -21,6 +21,10 @@ Alle produktiv verwendeten Werte stehen in `:root` von `styles.css`.
 - `--color-terracotta` und `--color-burgundy`: sparsame Markenakzente
 - `--color-gold` und `--color-gold-soft`: aus dem Lupercia-Siegel abgeleitete
   Akzente für Fokus, feine Linien und kleine redaktionelle Markierungen
+- `--color-sage-wash` und `--color-peach-wash`: helle, freundliche
+  Zwischenflächen für Geschichten, Salon- und Genussabschnitte
+- `--color-deep-warm`: warmer dunkler Kontrast, der nur noch gezielt für wenige
+  redaktionelle Schwerpunktflächen eingesetzt wird
 - `--color-line` und `--color-line-inverse`: subtile Trennlinien
 
 Reines Schwarz und Weiß werden vermieden. Farben dürfen nicht als knallige
