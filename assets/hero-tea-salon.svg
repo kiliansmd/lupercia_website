@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Tea Time bei Lupercia</title>
+  <desc id="desc">Eine warme, abstrahierte Illustration eines gedeckten Tisches mit Teekanne, Tasse, Gebäck und Zweigen.</desc>
+  <rect width="1600" height="1200" fill="#78806d"/>
+  <circle cx="1190" cy="270" r="360" fill="#c8bcaa"/>
+  <path d="M0 780C330 690 590 720 855 795c270 77 484 46 745-45v450H0Z" fill="#ded5c7"/>
+  <ellipse cx="830" cy="882" rx="565" ry="120" fill="#292720" opacity=".14"/>
+  <g fill="#465247">
+    <path d="M410 490c0-132 108-240 240-240s240 108 240 240v330H410Z"/>
+    <path d="M332 428 100 552l33 62 293-92Z"/>
+    <path fill="none" stroke="#465247" stroke-width="70" d="M860 430c238-25 246 326 18 303"/>
+  </g>
+  <ellipse cx="650" cy="490" rx="240" ry="67" fill="#292720"/>
+  <ellipse cx="650" cy="486" rx="190" ry="39" fill="#9e5843"/>
+  <path d="M592 265h116l22 82H570Z" fill="#292720"/>
+  <g>
+    <path d="M1030 666h260v175c0 90-58 145-130 145s-130-55-130-145Z" fill="#fbf8f0"/>
+    <ellipse cx="1160" cy="670" rx="130" ry="37" fill="#292720"/>
+    <ellipse cx="1160" cy="668" rx="105" ry="25" fill="#6e3d37"/>
+    <path d="M1280 726c146-19 146 184 4 166" fill="none" stroke="#fbf8f0" stroke-width="42"/>
+    <path d="M1120 606c-46-83 49-93 2-183M1191 614c51-70-29-97 21-168" fill="none" stroke="#fbf8f0" stroke-width="8" opacity=".7"/>
+  </g>
+  <g fill="#9e5843">
+    <ellipse cx="315" cy="917" rx="115" ry="43" transform="rotate(-9 315 917)"/>
+    <ellipse cx="480" cy="955" rx="94" ry="34" transform="rotate(8 480 955)"/>
+  </g>
+  <g fill="none" stroke="#292720" stroke-width="10" opacity=".78">
+    <path d="M140 760c104-161 115-322 63-490"/>
+    <path d="M201 500 86 419M215 593 335 488M185 403 305 300M196 334 94 260"/>
+  </g>
+  <text x="1480" y="1120" text-anchor="end" fill="#292720" font-family="Georgia,serif" font-size="48" font-style="italic">Zeit für Tee.</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "lupercia-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run vercel-build",
+    "vercel-build": "node tools/build.mjs",
+    "check:content": "node tools/check-content.mjs",
+    "check:assets": "node tools/check-assets.mjs",
+    "check:styles": "node tools/check-styles.mjs",
+    "typecheck": "node --check script.js && node --check content/site-content.js && node --check tools/build.mjs && node --check tools/check-assets.mjs && node --check tools/check-content.mjs && node --check tools/check-styles.mjs",
+    "lint": "npm run typecheck && npm run check:content && npm run check:assets && npm run check:styles",
+    "test": "npm run check:content && npm run check:assets && npm run check:styles"
+  }
+}
