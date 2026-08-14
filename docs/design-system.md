@@ -30,6 +30,11 @@ Alle produktiv verwendeten Werte stehen in `:root` von `styles.css`.
 Reines Schwarz und Weiß werden vermieden. Farben dürfen nicht als knallige
 Produktcodes oder großflächige Verläufe eingesetzt werden.
 
+Die Grundstimmung orientiert sich an einem hellen, cremefarbenen Salon: warme
+Brauntöne für Schrift, zurückhaltendes Gold für Linien sowie entsättigte Grün-,
+Peach- und Taupe-Flächen. Stärkere Farben bleiben einzelnen redaktionellen
+Schwerpunkten vorbehalten, damit die Seite insgesamt ruhig und licht wirkt.
+
 ### Typografie
 
 - **Instrument Serif** ist die Display- und Editorial-Schrift.
