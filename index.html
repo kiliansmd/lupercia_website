@@ -23,19 +23,25 @@
 
     <main id="top">
       <section class="hero" id="salon" aria-labelledby="hero-title">
-        <figure class="hero-media">
-          <img src="assets/hero-tea-salon.svg" alt="Editoriale Illustration einer gedeckten Tea Time bei Lupercia" width="1600" height="1200" />
-        </figure>
-        <div class="hero-overlay">
-          <p class="eyebrow">Bonn · Südstadt</p>
-          <h1 id="hero-title">Eine Welt<br />rund um <em>Tee.</em></h1>
-          <p class="intro">Ausgewählte Tees, besondere Genussmomente und Begegnungen – persönlich kuratiert von Tee-Sommelière Maria Moreno.</p>
+        <div class="hero-gallery hero-media" aria-label="Einblicke in den Lupercia Teesalon">
+          <figure class="hero-photo hero-photo--room">
+            <img src="assets/images/lupercia-fensterplatz.png" alt="Der gemütliche Fensterplatz im Lupercia Teesalon mit Holzbank und Blick in die Bonner Südstadt" width="765" height="1020" fetchpriority="high" />
+          </figure>
+          <figure class="hero-photo hero-photo--window">
+            <img src="assets/images/lupercia-schaufenster.png" alt="Das liebevoll dekorierte Schaufenster von Lupercia mit Teegeschirr und Rosen" width="742" height="1020" />
+          </figure>
+          <p class="hero-gallery-note"><span>Hereinspaziert</span> Argelanderstraße 75</p>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Teesalon · Bonn Südstadt</p>
+          <h1 id="hero-title">Ankommen.<br /><em>Aufgießen.</em><br />Wohlfühlen.</h1>
+          <p class="intro">Ein heller Platz am Fenster, eine Kanne guter Tee und Zeit zum Bleiben. Willkommen bei Lupercia – Ihrem gemütlichen Teesalon in der Bonner Südstadt.</p>
           <div class="hero-actions">
             <a class="button button--primary" href="/salon/#besuch">Lupercia besuchen</a>
             <span class="button button--secondary button--pending" aria-label="Tischreservierung folgt">Tisch reservieren · bald</span>
           </div>
+          <p class="hero-note">Tee · Mate · Tea Time · Feinkost</p>
         </div>
-        <p class="hero-note">Tee · Mate aus Argentinien · Tea Time · Feinkost · Veranstaltungen</p>
       </section>
 
       <section class="today section-shell" aria-labelledby="today-title">
@@ -53,7 +59,10 @@
       </section>
 
       <section class="maria section-shell" id="maria" aria-labelledby="maria-title">
-        <div class="portrait-art" role="img" aria-label="Abstraktes redaktionelles Porträt von Maria Moreno"><span>Maria</span></div>
+        <figure class="portrait-art">
+          <img src="assets/images/maria-moreno.png" alt="Tee-Sommelière Maria Moreno mit einer Lupercia-Teedose vor ihrem Teeregal" width="765" height="1020" loading="lazy" />
+          <figcaption><span>Maria Moreno</span>Tee-Sommelière · Gastgeberin</figcaption>
+        </figure>
         <div class="maria-copy">
           <p class="eyebrow">Maria Moreno · Tee-Sommelière</p>
           <h2 id="maria-title">Tee beginnt für mich mit Zeit.</h2>
