@@ -113,11 +113,12 @@ p { text-wrap: pretty; }
 .hero-gallery:hover .hero-photo--window img { transform: scale(1.025); }
 .hero-gallery-note { position: absolute; right: 4%; bottom: 2%; z-index: 2; margin: 0; color: var(--color-paper); font-size: .625rem; letter-spacing: .13em; text-align: right; text-shadow: 0 1px 8px rgb(42 27 21 / 60%); text-transform: uppercase; }
 .hero-gallery-note span { display: block; font-family: var(--font-display); font-size: 1.45rem; font-style: italic; letter-spacing: 0; text-transform: none; }
-.hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(3.5rem, 10vw, 7rem) var(--gutter) var(--space-6); }
-.hero h1 { max-width: 8ch; margin: var(--space-4) 0; font-size: clamp(4rem, 17vw, 7rem); letter-spacing: var(--tracking-display); line-height: .82; }
-.hero h1 em { color: var(--color-terracotta); font-weight: 400; }
-.hero .intro { margin: 0 0 var(--space-5); color: var(--color-ink-soft); }
-.hero-actions { display: flex; flex-direction: column; align-items: stretch; gap: var(--space-2); }
+.hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(4.5rem, 12vw, 7rem) var(--gutter) var(--space-6); }
+.hero h1 { width: 100%; margin: var(--space-4) 0 var(--space-5); font-size: clamp(3.25rem, 15.5vw, 7rem); letter-spacing: -.055em; line-height: .94; text-wrap: nowrap; }
+.hero h1 span, .hero h1 em { display: block; white-space: nowrap; }
+.hero h1 em { color: var(--color-terracotta); font-weight: 400; line-height: 1; }
+.hero .intro { max-width: 31rem; margin: 0 0 var(--space-5); color: var(--color-ink-soft); }
+.hero-actions { display: flex; flex-direction: column; align-items: stretch; gap: var(--space-2); max-width: 100%; }
 .hero .button--primary { border-color: var(--color-burgundy); background: var(--color-burgundy); color: var(--color-paper); }
 .hero .button--secondary { border-color: var(--color-line); color: var(--color-ink-soft); }
 .hero-note { width: 100%; margin: var(--space-6) 0 0; padding-top: var(--space-3); border-top: 1px solid var(--color-line); color: var(--color-ink-soft); font-size: var(--text-label); letter-spacing: .15em; text-transform: uppercase; }
@@ -449,11 +450,11 @@ p { text-wrap: pretty; }
 
 @media (min-width: 48rem) {
   :root { --text-display: clamp(6rem, 11vw, 10rem); --text-h2: clamp(4.5rem, 7vw, 7.5rem); }
-  .hero { grid-template-columns: minmax(23rem, .82fr) minmax(28rem, 1.18fr); min-height: calc(100svh - 5.25rem); }
+  .hero { grid-template-columns: minmax(25rem, .9fr) minmax(28rem, 1.1fr); min-height: calc(100svh - 5.25rem); }
   .hero-gallery { grid-column: 2; grid-row: 1; min-height: calc(100svh - 5.25rem); }
-  .hero-copy { grid-column: 1; grid-row: 1; min-height: calc(100svh - 5.25rem); padding-right: clamp(2.5rem, 5vw, 5rem); }
-  .hero h1 { font-size: clamp(4.4rem, 7.2vw, 7.8rem); }
-  .hero-actions { flex-direction: row; }
+  .hero-copy { grid-column: 1; grid-row: 1; min-height: calc(100svh - 5.25rem); padding-block: clamp(5rem, 9vh, 7rem) clamp(2rem, 4vh, 3rem); padding-right: clamp(2.5rem, 4vw, 4.5rem); }
+  .hero h1 { font-size: clamp(4rem, min(6.4vw, 11.5vh), 7.25rem); line-height: .96; }
+  .hero-actions { flex-flow: row wrap; }
   .today { grid-template-columns: 1.5fr .75fr; }
   .maria { grid-template-columns: minmax(18rem, .8fr) minmax(24rem, 1fr); align-items: center; }
   .product-editorial { grid-template-columns: 1.15fr .85fr; }
@@ -505,6 +506,7 @@ p { text-wrap: pretty; }
   .booking-link { justify-self: end; }
   .menu-button { display: none; }
   .hero { min-height: calc(100svh - 5.25rem); }
+  .hero-copy { padding-left: clamp(3rem, 7vw, 8.5rem); }
   .today { grid-template-columns: 1.4fr .6fr; }
   .portrait-art { min-height: 48rem; }
   .product-editorial { grid-template-columns: 1.2fr .8fr 1fr; }
@@ -520,7 +522,7 @@ p { text-wrap: pretty; }
 }
 
 @media (min-width: 90rem) {
-  .hero-copy { padding-left: max(var(--gutter), calc((100vw - 96rem) / 2)); }
+  .hero-copy { padding-left: max(clamp(5rem, 8vw, 9rem), calc((100vw - 108rem) / 2)); }
   .section-shell, .product-story { padding-inline: max(var(--gutter), calc((100vw - 96rem) / 2)); }
   .product-story { padding-inline: var(--space-7); }
 }

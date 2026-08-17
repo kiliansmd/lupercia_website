@@ -1,4 +1,7 @@
+import { readFileSync } from 'node:fs';
 import { siteContent } from '../content/site-content.js';
+
+const homePage = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 
 const expectedNavigation = ['Salon', 'Tee & Genuss', 'Veranstaltungen', 'Maria', 'Geschenkbox', 'Besuch'];
 const requiredEventFields = ['slug', 'title', 'category', 'date', 'time', 'description', 'shortDescription', 'image', 'status', 'bookingType', 'featured'];
@@ -26,6 +29,10 @@ if (siteContent.locale.available.length !== 1 || siteContent.productWorld.length
 
 if (siteContent.salonVisit.address.status !== 'available' || siteContent.salonVisit.openingHours.status !== 'available' || siteContent.salonVisit.phone.href !== 'tel:+4915167970350' || siteContent.links.instagram.href !== 'https://www.instagram.com/lupercia.de/') {
   throw new Error('Published visit and social details are incomplete.');
+}
+
+if (!homePage.includes('<script src="https://elfsightcdn.com/platform.js" async></script>') || !homePage.includes('elfsight-app-eea1093c-dd61-4d51-a3f2-c1a335162a59') || homePage.includes('data-elfsight-app-lazy')) {
+  throw new Error('The Instagram feed must load immediately through the published Elfsight widget.');
 }
 
 console.log(`Content model: OK (${siteContent.events.length} events, ${siteContent.eventSystem.categories.length} categories)`);
