@@ -24,4 +24,8 @@ if (siteContent.locale.available.length !== 1 || siteContent.productWorld.length
   throw new Error('Core content model is incomplete.');
 }
 
+if (siteContent.salonVisit.address.status !== 'available' || siteContent.salonVisit.openingHours.status !== 'available' || siteContent.salonVisit.phone.href !== 'tel:+4915167970350' || siteContent.links.instagram.href !== 'https://www.instagram.com/lupercia.de/') {
+  throw new Error('Published visit and social details are incomplete.');
+}
+
 console.log(`Content model: OK (${siteContent.events.length} events, ${siteContent.eventSystem.categories.length} categories)`);
