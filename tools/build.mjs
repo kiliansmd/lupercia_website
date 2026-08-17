@@ -14,7 +14,7 @@ for (const directory of ['content', 'tee-genuss', 'veranstaltungen', 'maria', 's
   await cp(new URL(`${directory}/`, sourceDirectory), new URL(`${directory}/`, outputDirectory), { recursive: true });
 }
 
-for (const asset of ['hero-tea-salon.svg', 'lupercia-logo.svg']) {
+for (const asset of ['hero-tea-salon.svg']) {
   await cp(new URL(`assets/${asset}`, sourceDirectory), new URL(`assets/${asset}`, outputDirectory));
 }
 
