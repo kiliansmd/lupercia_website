@@ -22,6 +22,7 @@ console.log('Logo asset: OK (white-backed 1254×1254 RGB PNG, text-only source)'
 const heroImages = new Map([
   ['lupercia-fensterplatz.png', [765, 1020]],
   ['lupercia-schaufenster.png', [742, 1020]],
+  ['maria-moreno.png', [765, 1020]],
 ]);
 
 for (const [image, [expectedWidth, expectedHeight]] of heroImages) {
@@ -39,4 +40,4 @@ for (const [image, [expectedWidth, expectedHeight]] of heroImages) {
   }
 }
 
-console.log('Hero assets: OK (2 portrait PNGs, text-only sources)');
+console.log('Photography assets: OK (3 portrait PNGs, text-only sources)');

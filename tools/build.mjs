@@ -23,7 +23,7 @@ for (const asset of ['hero-tea-salon.svg']) {
 const encodedLogo = await readFile(new URL('../assets/lupercia-logo.png.base64', import.meta.url), 'utf8');
 await writeFile(new URL('assets/lupercia-logo.png', outputDirectory), Buffer.from(encodedLogo.replaceAll(/\s/g, ''), 'base64'));
 
-for (const image of ['lupercia-fensterplatz.png', 'lupercia-schaufenster.png']) {
+for (const image of ['lupercia-fensterplatz.png', 'lupercia-schaufenster.png', 'maria-moreno.png']) {
   const encodedImage = await readFile(new URL(`../assets/images/${image}.base64`, import.meta.url), 'utf8');
   await writeFile(new URL(`assets/images/${image}`, outputDirectory), Buffer.from(encodedImage.replaceAll(/\s/g, ''), 'base64'));
 }
