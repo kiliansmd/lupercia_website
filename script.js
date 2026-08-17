@@ -162,6 +162,33 @@ const renderEventPage = () => {
   if (recurringTarget) recurringTarget.replaceChildren(...recurring.map((event) => createEventArticle(event)));
 };
 
+const loadInstagramFeed = () => {
+  const feed = document.querySelector('[data-instagram-feed]');
+  if (!feed) return;
+
+  const loadElfsight = () => {
+    if (document.querySelector('script[data-elfsight-platform]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.async = true;
+    script.dataset.elfsightPlatform = '';
+    document.head.append(script);
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    loadElfsight();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some(({ isIntersecting }) => isIntersecting)) return;
+    observer.disconnect();
+    loadElfsight();
+  }, { rootMargin: '300px 0px' });
+
+  observer.observe(feed);
+};
+
 renderTeaOfTheDay();
 renderNextEvent();
 renderProductWorld();
@@ -170,3 +197,4 @@ renderEvents();
 renderTeaFamilies();
 renderDelicacies();
 renderEventPage();
+loadInstagramFeed();
