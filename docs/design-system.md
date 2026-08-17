@@ -30,10 +30,12 @@ Alle produktiv verwendeten Werte stehen in `:root` von `styles.css`.
 Reines Schwarz und Weiß werden vermieden. Farben dürfen nicht als knallige
 Produktcodes oder großflächige Verläufe eingesetzt werden.
 
-Die Grundstimmung orientiert sich an einem hellen, cremefarbenen Salon: warme
-Brauntöne für Schrift, zurückhaltendes Gold für Linien sowie entsättigte Grün-,
-Peach- und Taupe-Flächen. Stärkere Farben bleiben einzelnen redaktionellen
-Schwerpunkten vorbehalten, damit die Seite insgesamt ruhig und licht wirkt.
+Die Grundstimmung orientiert sich eng an einem hellen, cremefarbenen Salon:
+Ivory und warmes Papier bestimmen nahezu alle großen Flächen, Espresso-Braun die
+Typografie und ein gedämpftes Amber kleine Labels, Linien und kursive Akzente.
+Peach und Taupe unterscheiden redaktionelle Bereiche nur leicht voneinander.
+Grün bleibt als leiser Verweis auf Tee und das florale Siegel auf Illustrationen
+beschränkt; dunkles Braun erscheint gezielt bei CTAs und im Footer.
 
 ### Typografie
 

@@ -1,25 +1,25 @@
 /* Lupercia — warm editorial tea salon */
 :root {
-  --color-ivory: #f7f1e7;
-  --color-paper: #fcf8f0;
-  --color-ink: #38291f;
-  --color-ink-soft: #7b6d61;
-  --color-taupe: #d8c9b6;
-  --color-taupe-light: #eee5d9;
-  --color-leaf: #929b86;
-  --color-leaf-dark: #65705f;
-  --color-terracotta: #b97845;
-  --color-burgundy: #7a4b42;
-  --color-gold: #c99345;
-  --color-gold-soft: #eed79a;
-  --color-sage-wash: #edf0e8;
-  --color-peach-wash: #f5e9de;
-  --color-deep-warm: #43362d;
-  --color-brand-black: #201914;
-  --color-line: rgb(56 41 31 / 14%);
+  --color-ivory: #f8f1e5;
+  --color-paper: #fcf8f1;
+  --color-ink: #321f17;
+  --color-ink-soft: #7b6c61;
+  --color-taupe: #e5d5c1;
+  --color-taupe-light: #f1e7d9;
+  --color-leaf: #9aa08c;
+  --color-leaf-dark: #737966;
+  --color-terracotta: #a45c0b;
+  --color-burgundy: #68311f;
+  --color-gold: #c78225;
+  --color-gold-soft: #edcf9b;
+  --color-sage-wash: #f4eee3;
+  --color-peach-wash: #f3e4d1;
+  --color-deep-warm: #502a1c;
+  --color-brand-black: #2a1b15;
+  --color-line: rgb(50 31 23 / 13%);
   --color-line-inverse: rgb(251 248 240 / 22%);
-  --color-paper-strong: rgb(251 248 240 / 68%);
-  --color-paper-subtle: rgb(251 248 240 / 46%);
+  --color-paper-strong: rgb(252 248 241 / 76%);
+  --color-paper-subtle: rgb(252 248 241 / 52%);
   --font-display: "Instrument Serif", Georgia, serif;
   --font-functional: "DM Sans", Arial, sans-serif;
   --text-display: clamp(4.25rem, 18vw, 8rem);
@@ -62,7 +62,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold); ou
 ::selection { background: var(--color-gold-soft); color: var(--color-ink); }
 
 .section-shell { padding: var(--space-8) var(--gutter); }
-.eyebrow { margin: 0; color: var(--color-burgundy); font-size: var(--text-label); font-weight: 600; letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
+.eyebrow { margin: 0; color: var(--color-terracotta); font-size: var(--text-label); font-weight: 500; letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
 .wordmark { display: inline-flex; align-items: center; width: 3.125rem; line-height: 1; }
 .brand-logo { width: 3.125rem; height: 3.125rem; object-fit: contain; border-radius: 50%; background: var(--color-brand-black); }
 .brand-logo--footer { width: 8.5rem; height: 8.5rem; }
@@ -74,7 +74,7 @@ p { text-wrap: pretty; }
 /* Buttons */
 .button, .text-link { display: inline-flex; align-items: center; justify-content: space-between; gap: var(--space-4); font-size: var(--text-small); font-weight: 500; line-height: 1; transition: color var(--duration-fast), background-color var(--duration-fast), border-color var(--duration-fast); }
 .button { min-height: 3.5rem; padding: 0 var(--space-5); border: 1px solid var(--color-ink); letter-spacing: .035em; }
-.button--primary { background: var(--color-ink); color: var(--color-paper); }
+.button--primary { border-color: var(--color-burgundy); background: var(--color-burgundy); color: var(--color-paper); }
 .button--primary:hover { border-color: var(--color-gold); background: var(--color-gold); color: var(--color-ink); }
 .button--secondary { background: transparent; }
 .button--secondary:not(.button--pending):hover { background: var(--color-ink); color: var(--color-paper); }
@@ -139,14 +139,14 @@ p { text-wrap: pretty; }
 .maria-copy .text-link { margin-top: var(--space-5); }
 
 /* Product world */
-.product-world { background: var(--color-deep-warm); color: var(--color-paper); }
+.product-world { background: var(--color-ivory); color: var(--color-ink); }
 .section-heading h2 { max-width: 10ch; }
 .product-editorial { display: grid; }
 .product-story { min-height: 30rem; padding: var(--space-6) var(--gutter); border-top: 1px solid var(--color-line-inverse); }
 .product-story h3 { max-width: 10ch; margin: clamp(7rem, 20vw, 12rem) 0 var(--space-4); font-size: var(--text-h3); line-height: .98; }
-.product-story > p:last-child { max-width: 30rem; color: var(--color-paper-strong); }
-.product-story--tea { background: var(--color-leaf-dark); }
-.product-story--mate { background: var(--color-terracotta); }
+.product-story > p:last-child { max-width: 30rem; color: var(--color-ink-soft); }
+.product-story--tea { background: var(--color-paper); }
+.product-story--mate { background: var(--color-peach-wash); }
 .product-story--tableware { background: var(--color-taupe); color: var(--color-ink); }
 .product-story--tableware > p:last-child { color: var(--color-ink-soft); }
 .product-story--food { background: var(--color-paper); color: var(--color-ink); }
@@ -241,9 +241,9 @@ p { text-wrap: pretty; }
 .tableware-deep { align-items: center; background: var(--color-paper); }
 .tableware-mark { display: grid; place-items: center; min-height: 28rem; border: 1px solid var(--color-line); background: var(--color-ivory); }
 .tableware-mark span { font-family: var(--font-display); font-size: clamp(5rem, 17vw, 9rem); font-style: italic; letter-spacing: -.05em; line-height: .7; text-align: center; }
-.delicacies-deep { background: var(--color-deep-warm); color: var(--color-paper); }
-.delicacies-deep ul { margin: var(--space-7) 0 0; padding: 0; border-top: 1px solid var(--color-line-inverse); list-style: none; }
-.delicacies-deep li { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line-inverse); font-family: var(--font-display); font-size: clamp(1.65rem, 5vw, 3rem); }
+.delicacies-deep { background: var(--color-peach-wash); color: var(--color-ink); }
+.delicacies-deep ul { margin: var(--space-7) 0 0; padding: 0; border-top: 1px solid var(--color-line); list-style: none; }
+.delicacies-deep li { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line); font-family: var(--font-display); font-size: clamp(1.65rem, 5vw, 3rem); }
 .salon-drinks { background: var(--color-taupe-light); }
 .tea-time-deep { background: var(--color-ivory); }
 .tea-time-deep .button { margin-top: var(--space-4); }
@@ -357,8 +357,6 @@ p { text-wrap: pretty; }
 
 /* Harmonized editorial rhythm */
 .hero .eyebrow,
-.product-world .eyebrow,
-.delicacies-deep .eyebrow,
 .events-cta .eyebrow,
 .maria-visit .eyebrow,
 .tea-visit .eyebrow {
