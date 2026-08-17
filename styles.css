@@ -64,7 +64,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold); ou
 .section-shell { padding: var(--space-8) var(--gutter); }
 .eyebrow { margin: 0; color: var(--color-terracotta); font-size: var(--text-label); font-weight: 500; letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
 .wordmark { display: inline-flex; align-items: center; width: 3.125rem; line-height: 1; }
-.brand-logo { width: 3.125rem; height: 3.125rem; object-fit: contain; border-radius: 50%; background: transparent; }
+.brand-logo { width: 3.125rem; height: 3.125rem; object-fit: contain; border-radius: 50%; background: #fff; }
 .brand-logo--footer { width: 8.5rem; height: 8.5rem; }
 .footer-brand .wordmark { width: 8.5rem; }
 .body-large, .intro { max-width: var(--copy-max); font-size: var(--text-body-large); line-height: 1.58; }
