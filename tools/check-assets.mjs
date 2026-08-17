@@ -13,8 +13,8 @@ const height = logo.readUInt32BE(20);
 const bitDepth = logo[24];
 const colorType = logo[25];
 
-if (width !== 250 || height !== 250 || bitDepth !== 8 || colorType !== 2) {
-  throw new Error(`Expected the white-backed 250×250 RGB PNG, received ${width}×${height}, depth ${bitDepth}, color type ${colorType}.`);
+if (width !== 1254 || height !== 1254 || bitDepth !== 8 || colorType !== 2) {
+  throw new Error(`Expected the white-backed 1254×1254 RGB PNG, received ${width}×${height}, depth ${bitDepth}, color type ${colorType}.`);
 }
 
-console.log('Logo asset: OK (white-backed 250×250 RGB PNG, text-only source)');
+console.log('Logo asset: OK (white-backed 1254×1254 RGB PNG, text-only source)');
