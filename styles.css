@@ -178,6 +178,13 @@ p { text-wrap: pretty; }
 .event { display: grid; gap: var(--space-4); padding: var(--space-5) 0; border-bottom: 1px solid var(--color-line); }
 .event h3 { margin: var(--space-2) 0 0; font-size: var(--text-h3); line-height: 1; }
 .event p { max-width: var(--copy-max); color: var(--color-ink-soft); }
+
+/* Instagram */
+.instagram { background: var(--color-paper); }
+.instagram-heading { display: grid; gap: var(--space-5); margin-bottom: var(--space-7); }
+.instagram-heading h2 { max-width: 10ch; margin: var(--space-5) 0 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
+.instagram-heading > p { align-self: end; max-width: 30rem; margin: 0; color: var(--color-ink-soft); }
+.instagram-feed { min-height: clamp(20rem, 52vw, 36rem); contain: layout paint; }
 .event strong { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; }
 .event--compact h3 { font-size: clamp(1.6rem, 5vw, 2.5rem); }
 .event--compact span { color: var(--color-ink-soft); font-size: var(--text-small); }
@@ -439,6 +446,7 @@ p { text-wrap: pretty; }
   .quality, .salon, .gift, .breakfast, .visit-heading { grid-template-columns: minmax(14rem, .7fr) minmax(24rem, 1fr); }
   .event { grid-template-columns: minmax(15rem, .8fr) 1fr; }
   .event--compact { grid-template-columns: 1fr auto; align-items: center; }
+  .instagram-heading { grid-template-columns: minmax(18rem, 1fr) minmax(20rem, .7fr); }
   .visit-info { display: grid; grid-template-columns: repeat(3, 1fr); }
   .visit-info > div { padding-right: var(--space-4); }
   .footer-details { grid-template-columns: repeat(3, 1fr); }
