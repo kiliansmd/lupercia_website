@@ -652,3 +652,89 @@ h1, h2, h3 { font-weight: 500; }
 @media (min-width: 48rem) {
   .instagram-heading > p { padding-bottom: var(--space-2); }
 }
+
+/* Curated section cadence — measured variation without changing the content grid */
+.today,
+.bio-quality,
+.upcoming-events,
+.name-story,
+.salon-daily {
+  padding-top: var(--space-7);
+}
+
+.quality,
+.tableware-deep,
+.private-events,
+.selection-philosophy,
+.salon-beverages {
+  padding-bottom: var(--space-7);
+}
+
+.recurring-events,
+.hostess,
+.salon-expect {
+  padding-top: calc(var(--space-8) + var(--space-4));
+}
+
+.quality-copy > p,
+.salon-copy > p,
+.bio-quality > div:last-child,
+.private-events > div,
+.salon-beverages > div:last-child {
+  max-width: 31rem;
+}
+
+.maria-copy { max-width: 36rem; }
+.event-formats .format-lines { max-width: 52rem; }
+.salon-expect ul { max-width: 58rem; }
+
+@media (min-width: 48rem) {
+  .today { grid-template-columns: minmax(20rem, 1.35fr) minmax(15rem, .65fr); }
+  .quality { grid-template-columns: minmax(12rem, .55fr) minmax(24rem, 1.15fr); }
+  .salon { grid-template-columns: minmax(14rem, .85fr) minmax(24rem, 1.15fr); }
+  .gift { grid-template-columns: minmax(12rem, .6fr) minmax(24rem, 1.2fr); }
+
+  .maria-intro,
+  .argentina-story,
+  .private-events,
+  .salon-welcome {
+    grid-template-columns: minmax(12rem, .55fr) minmax(24rem, 1.2fr);
+  }
+
+  .name-story,
+  .selection-philosophy,
+  .salon-teatime {
+    grid-template-columns: minmax(18rem, 1.05fr) minmax(20rem, .8fr);
+  }
+
+  .event-formats,
+  .salon-expect {
+    grid-template-columns: minmax(12rem, .65fr) minmax(25rem, 1.25fr);
+  }
+
+  .name-story > div:last-child,
+  .selection-philosophy > div:last-child,
+  .salon-teatime > div:last-child {
+    padding-top: var(--space-6);
+  }
+
+  .argentina-story > .eyebrow,
+  .private-events > .eyebrow {
+    align-self: center;
+  }
+
+  .portrait-art {
+    margin-left: calc(var(--gutter) * -.3);
+  }
+
+  .tableware-mark {
+    margin-right: calc(var(--gutter) * -.25);
+  }
+}
+
+@media (min-width: 64rem) {
+  .maria { grid-template-columns: minmax(22rem, .9fr) minmax(28rem, 1.1fr); }
+  .portrait-art { min-height: 52rem; }
+  .mate-editorial { grid-template-columns: minmax(25rem, .75fr) minmax(34rem, 1.25fr); }
+  .tea-relationship { grid-template-columns: minmax(24rem, .72fr) minmax(35rem, 1.28fr); }
+}
