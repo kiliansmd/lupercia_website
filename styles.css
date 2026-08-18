@@ -413,6 +413,9 @@ p { text-wrap: pretty; }
 .hero .eyebrow,
 .salon-hero-copy > .eyebrow { color: var(--color-burgundy); letter-spacing: .15em; }
 
+.hero .eyebrow,
+.salon-hero-copy > .eyebrow { color: var(--color-burgundy); letter-spacing: .15em; }
+
 .site-header nav a {
   letter-spacing: .045em;
 }
