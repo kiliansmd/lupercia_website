@@ -274,7 +274,7 @@ p { text-wrap: pretty; }
 .bio-quality .body-large { max-width: 28rem; color: var(--color-ink); font-style: italic; }
 .mate-editorial { display: grid; background: var(--color-peach-wash); color: var(--color-ink); }
 .mate-editorial-art { position: relative; min-height: 31rem; overflow: hidden; background: var(--color-taupe); }
-.mate-editorial-art::before { position: absolute; bottom: 12%; left: 50%; width: min(66%, 24rem); aspect-ratio: 1.25; border-radius: .75rem .75rem 50% 50%; background: var(--color-burgundy); box-shadow: inset 0 3.5rem 0 var(--color-leaf-dark); content: ""; transform: translateX(-50%) rotate(-3deg); }
+.mate-editorial-art::before { position: absolute; bottom: 12%; left: 50%; width: min(66%, 24rem); aspect-ratio: 1.25; border-radius: .75rem .75rem 50% 50%; background: var(--color-burgundy); box-shadow: inset 0 3.5rem 0 var(--color-leaf-dark); content: ""; transform: translateX(-50%); }
 .mate-editorial-art::after { position: absolute; bottom: 27%; left: 58%; width: .7rem; height: 22rem; border-radius: 1rem; background: var(--color-paper); content: ""; transform: rotate(13deg); }
 .mate-editorial-art span { position: absolute; right: var(--space-5); bottom: var(--space-4); z-index: 2; color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; }
 .mate-editorial-copy { padding: var(--space-8) var(--gutter); }
@@ -300,7 +300,7 @@ p { text-wrap: pretty; }
 .events-hero h1 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
 .events-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
 .events-hero-mark { display: grid; place-items: center; min-height: 28rem; overflow: hidden; background: var(--color-leaf-dark); }
-.events-hero-mark span { color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; transform: rotate(-4deg); }
+.events-hero-mark span { color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; }
 .next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { display: grid; gap: var(--space-7); }
 .next-event-deep h2, .upcoming-events h2, .recurring-events h2, .event-formats h2, .private-events h2, .events-cta h2 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
 .next-event-deep { background: var(--color-taupe-light); }
@@ -347,7 +347,7 @@ p { text-wrap: pretty; }
 .name-story { background: var(--color-paper); }
 .tea-relationship { display: grid; background: var(--color-sage-wash); color: var(--color-ink); }
 .tea-relationship-mark { display: grid; place-items: center; min-height: 31rem; background: var(--color-taupe); color: var(--color-ink); }
-.tea-relationship-mark span { font-family: var(--font-display); font-size: clamp(5rem, 18vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; transform: rotate(-4deg); }
+.tea-relationship-mark span { font-family: var(--font-display); font-size: clamp(5rem, 18vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; }
 .tea-relationship-copy { padding: var(--space-8) var(--gutter); }
 .tea-relationship-copy > p:not(.eyebrow) { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .sommelier { background: var(--color-taupe-light); }
@@ -526,7 +526,7 @@ p { text-wrap: pretty; }
   .delicacies-deep ul { margin-top: 0; }
   .events-hero { grid-template-columns: 1.1fr .9fr; min-height: 48rem; }
   .events-hero > div { min-height: 48rem; }
-  .next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { grid-template-columns: minmax(15rem, .75fr) minmax(25rem, 1fr); }
+  .next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .event-system-card:not(.event-system-card--featured) { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: var(--space-2) var(--space-5); align-items: start; }
   .event-system-card:not(.event-system-card--featured) .eyebrow { grid-column: 1; grid-row: 1; }
   .event-system-card:not(.event-system-card--featured) h3 { grid-column: 2; grid-row: 1; margin: 0; }
@@ -539,13 +539,13 @@ p { text-wrap: pretty; }
   .format-lines article > h3 { margin-top: 0; }
   .maria-hero { grid-template-columns: .9fr 1.1fr; min-height: 50rem; }
   .maria-portrait, .maria-hero-copy { min-height: 50rem; }
-  .maria-intro, .name-story, .sommelier, .argentina-story, .selection-philosophy, .hostess, .maria-closing, .maria-visit { grid-template-columns: minmax(15rem, .75fr) minmax(25rem, 1fr); }
+  .maria-intro, .name-story, .sommelier, .argentina-story, .selection-philosophy, .hostess, .maria-closing, .maria-visit { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .tea-relationship { grid-template-columns: .85fr 1.15fr; min-height: 48rem; }
   .tea-relationship-mark { min-height: 48rem; }
   .tea-relationship-copy { display: flex; flex-direction: column; justify-content: center; }
   .salon-hero { grid-template-columns: 1.1fr .9fr; min-height: 50rem; }
   .room-photo-placeholder, .salon-hero-copy { min-height: 50rem; }
-  .salon-welcome, .salon-teatime, .salon-daily, .salon-taste, .salon-beverages, .salon-expect, .salon-visit { grid-template-columns: minmax(15rem, .75fr) minmax(25rem, 1fr); }
+  .salon-welcome, .salon-teatime, .salon-daily, .salon-taste, .salon-beverages, .salon-expect, .salon-visit { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .salon-expect li { grid-template-columns: .4fr 1fr; align-items: baseline; }
   .visit-grid { grid-template-columns: repeat(2, 1fr); }
   .salon-visit .privacy-note { grid-column: 2; }
@@ -603,6 +603,19 @@ p { text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media (max-width: 47.999rem) {
+  :root { --space-7: clamp(3.5rem, 12vw, 4.5rem); --space-8: clamp(5rem, 16vw, 6rem); }
+  .footer-details > div { grid-template-columns: minmax(5.75rem, .4fr) 1fr; }
+  .reservation-pending { align-items: baseline; flex-wrap: wrap; }
+}
+
+@media (max-width: 22rem) {
+  :root { --text-display: 3.3rem; --text-h2: 2.55rem; --text-h3: 1.8rem; }
+  .hero h1 { font-size: clamp(2.75rem, 14vw, 3.15rem); letter-spacing: -.045em; }
+  .hero-copy { padding-inline: var(--gutter); }
+  .site-header.open nav a { font-size: clamp(2rem, 10vw, 2.5rem); }
 }
 
 /* Südstadt salon — restrained, collected and quietly traditional */
@@ -792,8 +805,14 @@ h1, h2, h3 { font-weight: 500; }
 }
 
 @media (min-width: 64rem) {
-  .maria { grid-template-columns: minmax(27rem, 1.08fr) minmax(25rem, .92fr); }
+  .maria { grid-template-columns: minmax(26rem, 1.08fr) minmax(24rem, .92fr); }
   .portrait-art { min-height: 56rem; margin-block: calc(var(--space-4) * -1); }
   .mate-editorial { grid-template-columns: minmax(25rem, .75fr) minmax(34rem, 1.25fr); }
   .tea-relationship { grid-template-columns: minmax(24rem, .72fr) minmax(35rem, 1.28fr); }
+  .salon-copy { margin-left: var(--space-3); }
+  .bio-quality > div:last-child { margin-left: var(--space-3); }
+  .instagram-heading > div:last-child { justify-self: end; max-width: 28rem; margin-right: var(--space-4); }
+  .gift > div:last-child { max-width: 30rem; margin-top: var(--space-4); }
+  .hostess-quote { margin-right: calc(var(--space-4) * -1); }
+  .event-formats .format-lines { margin-right: calc(var(--gutter) * -.12); }
 }
