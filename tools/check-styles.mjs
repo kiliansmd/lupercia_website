@@ -33,6 +33,8 @@ const requiredPatterns = [
   ['mate editorial', '.mate-editorial'],
   ['events hero', '.events-hero'],
   ['event system cards', '.event-system-card'],
+  ['line-led featured event', 'border-top: 2px solid var(--color-burgundy)'],
+  ['typographic pending action', '.event-action { display: inline-flex'],
   ['Maria story hero', '.maria-hero'],
   ['Maria portrait', '.maria-portrait'],
   ['salon hero', '.salon-hero'],

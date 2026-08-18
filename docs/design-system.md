@@ -29,8 +29,10 @@ deshalb unangetastet; die Verfeinerung erfolgt über gemeinsame Tokens.
   ist Medien und ein nahezu unsichtbarer Schatten der sticky Navigation
   vorbehalten; Buttons und Logos bleiben ohne Schatten.
 - **Cards und Sektionen:** Inhalte werden überwiegend durch Linien, Farbflächen
-  und Abstand statt durch gleichförmige Karten gruppiert. Eventkarten und der
-  nächste Termin bleiben die einzigen ausgeprägten Kartenmuster.
+  und Abstand statt durch gleichförmige Karten gruppiert. Der hervorgehobene
+  Termin bleibt über eine stärkere Anfangslinie erkennbar, ohne als schwebende
+  Farbkarte aufzutreten. Status, ausstehende Aktionen, Zertifikatshinweise und
+  Reservierungsstatus sind typografische Zeilen statt Chips oder Infoboxen.
 - **Bilder:** Echte Salonbilder sind hochformatig und werden mit `object-fit`
   beschnitten; vorhandene abstrakte Platzhalter behalten ihre Proportionen.
   Bildrahmen und Zoombewegungen bleiben ruhig und sparsam.
@@ -107,6 +109,18 @@ Es gibt maximal drei Varianten:
 
 Nicht verfügbare Aktionen sind keine Links oder Buttons. Sie werden als ruhige,
 statische Coming-soon-Zeile dargestellt.
+
+## Komponenten und Flächen
+
+- Wiederkehrende Informationen beginnen bevorzugt mit einer 1-px-Linie und
+  erhalten ihren Rhythmus durch vertikalen Abstand; ein umlaufender Rahmen ist
+  nur für tatsächlich abgeschlossene, interaktive Elemente vorgesehen.
+- Statusangaben und kleine Tags erhalten weder Pill-Radius noch gefüllten
+  Hintergrund. Farbe, Versalien und eine kurze Linie reichen zur Einordnung.
+- Ein redaktioneller Schwerpunkt darf eine stärkere 2-px-Anfangslinie verwenden.
+  Schatten oder ein schwebender Kartenhintergrund sind dafür nicht vorgesehen.
+- Zitate werden mit einer einzelnen seitlichen Linie gesetzt. Bild- und
+  Illustrationsflächen bleiben eigenständig und werden nicht in Cards eingefasst.
 
 ## Bewegung
 
