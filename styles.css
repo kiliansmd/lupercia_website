@@ -117,8 +117,6 @@ p { text-wrap: pretty; }
 .hero-photo--room img { object-position: 50% 52%; }
 .hero-photo--window { right: 2%; bottom: 7%; width: 36%; height: 56%; border: 2px solid var(--color-paper); box-shadow: var(--shadow-media); }
 .hero-photo--window img { object-position: 50% 58%; }
-.hero-gallery:hover .hero-photo--room img { transform: scale(1.008); }
-.hero-gallery:hover .hero-photo--window img { transform: scale(1.012); }
 .hero-gallery-note { position: absolute; bottom: var(--space-4); left: var(--space-4); z-index: 2; margin: 0; padding-left: var(--space-3); border-left: 1px solid rgb(252 248 241 / 58%); color: var(--color-paper); font-size: .625rem; letter-spacing: .14em; text-shadow: 0 1px 8px rgb(42 27 21 / 48%); text-transform: uppercase; }
 .hero-gallery-note span { display: block; margin-bottom: .15rem; font-family: var(--font-display); font-size: 1.2rem; font-style: italic; font-weight: 500; letter-spacing: .01em; text-transform: none; }
 .hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(3.75rem, 10vw, 6rem) var(--gutter) var(--space-6); }
@@ -150,7 +148,6 @@ p { text-wrap: pretty; }
 .portrait-art { position: relative; min-height: 38rem; overflow: hidden; background: var(--color-burgundy); box-shadow: none; }
 .portrait-art::after { position: absolute; inset: 58% 0 0; background: linear-gradient(transparent, rgb(42 27 21 / 48%)); content: ""; pointer-events: none; }
 .portrait-art img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; object-position: 50% 42%; filter: saturate(.96) contrast(1.01); transition: transform 1.2s var(--ease-editorial); }
-.portrait-art:hover img { transform: scale(1.008); }
 .portrait-art figcaption { position: absolute; right: var(--space-5); bottom: var(--space-5); left: var(--space-5); z-index: 2; padding-left: var(--space-3); border-left: 1px solid rgb(252 248 241 / 58%); color: rgb(252 248 241 / 78%); font-size: .625rem; letter-spacing: .14em; text-transform: uppercase; }
 .portrait-art figcaption span { display: block; margin-bottom: .3rem; color: var(--color-paper); font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.5rem); font-style: italic; font-weight: 500; letter-spacing: -.02em; line-height: 1; text-transform: none; }
 .maria h2 { max-width: 9ch; }
@@ -257,7 +254,6 @@ p { text-wrap: pretty; }
 .tea-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
 .tea-hero-media { min-height: 28rem; overflow: hidden; background: var(--color-leaf); }
 .tea-hero-media img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; object-position: 50% 50%; transition: transform 1.2s var(--ease-editorial); }
-.tea-hero-media:hover img { transform: scale(1.01); }
 .tea-core, .bio-quality, .daily-deep, .tableware-deep, .salon-drinks, .tea-time-deep, .tea-visit { display: grid; gap: var(--space-7); }
 .tea-core h2, .bio-quality h2, .mate-editorial h2, .daily-deep h2, .tableware-deep h2, .delicacies-deep h2, .salon-drinks h2, .tea-time-deep h2, .tea-visit h2 { max-width: 9ch; margin: var(--space-5) 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
 .tea-core { background: var(--color-ivory); }
@@ -580,11 +576,17 @@ p { text-wrap: pretty; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-copy > *, .today > *, .maria-copy > * { animation: reveal var(--duration-slow) var(--ease-editorial) both; }
-  .hero-copy h1 { animation-delay: 80ms; }
-  .hero-copy .intro { animation-delay: 140ms; }
-  .hero-copy .hero-actions { animation-delay: 200ms; }
-  @keyframes reveal { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: none; } }
+  .hero-gallery { animation: image-reveal 900ms var(--ease-editorial) both; }
+  .hero-copy { animation: copy-reveal 680ms var(--ease-editorial) 80ms both; }
+  @keyframes image-reveal { from { opacity: .82; } to { opacity: 1; } }
+  @keyframes copy-reveal { from { opacity: 0; transform: translateY(.25rem); } to { opacity: 1; transform: none; } }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero-gallery:hover .hero-photo--room img,
+  .portrait-art:hover img { transform: scale(1.008); }
+  .hero-gallery:hover .hero-photo--window img { transform: scale(1.012); }
+  .tea-hero-media:hover img { transform: scale(1.01); }
 }
 
 @media (prefers-reduced-motion: reduce) {
