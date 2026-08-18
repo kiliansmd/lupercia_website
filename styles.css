@@ -3,7 +3,7 @@
   --color-ivory: #f8f1e5;
   --color-paper: #fcf8f1;
   --color-ink: #321f17;
-  --color-ink-soft: #7b6c61;
+  --color-ink-soft: #716158;
   --color-taupe: #e5d5c1;
   --color-taupe-light: #f1e7d9;
   --color-leaf: #9aa08c;
@@ -65,7 +65,7 @@ button { color: inherit; font: inherit; }
 img { display: block; width: 100%; height: auto; }
 figure { margin: 0; }
 section[id] { scroll-margin-top: 5rem; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 5px; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 ::selection { background: var(--color-gold-soft); color: var(--color-ink); }
 
 .section-shell { padding: var(--space-8) var(--gutter); }
@@ -290,9 +290,9 @@ p { text-wrap: pretty; }
 .salon-drinks { background: var(--color-taupe-light); }
 .tea-time-deep { background: var(--color-ivory); }
 .tea-time-deep .button { margin-top: var(--space-4); }
-.tea-visit { background: var(--color-terracotta); color: var(--color-paper); }
-.tea-visit p { color: var(--color-paper-strong); }
-.tea-visit .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
+.tea-visit { border-top: 2px solid var(--color-terracotta); background: var(--color-paper); color: var(--color-ink); }
+.tea-visit p { color: var(--color-ink-soft); }
+.tea-visit .button--primary { border-color: var(--color-burgundy); background: var(--color-burgundy); color: var(--color-paper); }
 
 /* Veranstaltungen — expandable editorial event system */
 .events-hero { display: grid; background: var(--color-paper); }
@@ -327,9 +327,9 @@ p { text-wrap: pretty; }
 .format-lines p { max-width: var(--copy-max); color: var(--color-ink-soft); }
 .private-events { background: var(--color-paper); }
 .private-events > div > p { max-width: var(--copy-max); color: var(--color-ink-soft); }
-.events-cta { background: var(--color-terracotta); color: var(--color-paper); }
-.events-cta p { max-width: var(--copy-max); color: var(--color-paper-strong); }
-.events-cta .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
+.events-cta { border-top: 2px solid var(--color-terracotta); background: var(--color-peach-wash); color: var(--color-ink); }
+.events-cta p { max-width: var(--copy-max); color: var(--color-ink-soft); }
+.events-cta .button--primary { border-color: var(--color-burgundy); background: var(--color-burgundy); color: var(--color-paper); }
 
 /* Maria — personal editorial story */
 .maria-hero { display: grid; background: var(--color-paper); }
@@ -360,9 +360,9 @@ p { text-wrap: pretty; }
 .hostess-quote span { color: var(--color-ink-soft); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .maria-closing { background: var(--color-sage-wash); color: var(--color-ink); }
 .maria-closing > div > p { color: var(--color-ink-soft); }
-.maria-visit { background: var(--color-terracotta); color: var(--color-paper); }
-.maria-visit > div > p { color: var(--color-paper-strong); }
-.maria-visit .button--primary { border-color: var(--color-paper); background: var(--color-paper); color: var(--color-ink); }
+.maria-visit { border-top: 2px solid var(--color-gold); background: var(--color-sage-wash); color: var(--color-ink); }
+.maria-visit > div > p { color: var(--color-ink-soft); }
+.maria-visit .button--primary { border-color: var(--color-burgundy); background: var(--color-burgundy); color: var(--color-paper); }
 
 /* Salon & Besuch — atmosphere and planning */
 .salon-hero { display: grid; background: var(--color-paper); }
@@ -408,9 +408,10 @@ p { text-wrap: pretty; }
 /* Harmonized editorial rhythm */
 .events-cta .eyebrow,
 .maria-visit .eyebrow,
-.tea-visit .eyebrow {
-  color: var(--color-gold-soft);
-}
+.tea-visit .eyebrow { color: var(--color-ink-soft); }
+
+.hero .eyebrow,
+.salon-hero-copy > .eyebrow { color: var(--color-burgundy); letter-spacing: .15em; }
 
 .hero .eyebrow,
 .salon-hero-copy > .eyebrow { color: var(--color-burgundy); letter-spacing: .15em; }
@@ -661,26 +662,16 @@ h1, h2, h3 { font-weight: 500; }
 .quality-copy::before,
 .salon-copy::before,
 .section-heading::before { width: 3.75rem; background: #b98b3e; }
+.today-feature::before { width: 2rem; }
+.maria-copy::before { width: 4.5rem; }
+.quality-copy::before { width: 1.5rem; }
+.salon-copy::before { width: 3rem; }
 .next-event { border-top-width: 1px; }
 
-.events-hero-mark,
-.tableware-mark,
-.mate-editorial-art,
-.tea-relationship-mark,
-.maria-portrait,
-.room-photo-placeholder { outline: 1px solid rgb(252 248 241 / 55%); outline-offset: -.8rem; }
+.room-photo-placeholder { outline: 1px solid rgb(252 248 241 / 48%); outline-offset: -.8rem; }
 .portrait-art { background: #5d3025; }
 
 .product-story { position: relative; border-color: rgb(50 31 23 / 12%); }
-.product-story::after {
-  position: absolute;
-  top: var(--space-5);
-  right: var(--space-5);
-  color: rgb(139 90 32 / 52%);
-  content: "✦";
-  font-family: var(--font-functional);
-  font-size: .75rem;
-}
 .product-story h3 { letter-spacing: -.025em; }
 
 .salon-menu li span { color: #9a6b28; }

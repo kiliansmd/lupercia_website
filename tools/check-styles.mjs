@@ -7,6 +7,7 @@ const requiredPatterns = [
   ['humanist sans-serif display typography', '--font-display: "Source Sans 3"'],
   ['compact reading width', '--copy-max: 34rem'],
   ['restrained border color', '--color-line: rgb(50 31 23 / 10%)'],
+  ['accessible soft ink', '--color-ink-soft: #716158'],
   ['brand gold token', '--color-gold'],
   ['soft brand gold token', '--color-gold-soft'],
   ['light sage wash', '--color-sage-wash'],
@@ -41,6 +42,7 @@ const requiredPatterns = [
   ['room photography placeholder', '.room-photo-placeholder'],
   ['balanced headings', 'text-wrap: balance'],
   ['selection color', '::selection'],
+  ['context-aware focus ring', 'outline: 2px solid currentColor'],
 ];
 
 const missing = requiredPatterns
