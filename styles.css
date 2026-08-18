@@ -117,7 +117,7 @@ p { text-wrap: pretty; }
 .hero-photo--room img { object-position: 50% 52%; }
 .hero-photo--window { right: 2%; bottom: 7%; width: 36%; height: 56%; border: 2px solid var(--color-paper); box-shadow: var(--shadow-media); }
 .hero-photo--window img { object-position: 50% 58%; }
-.hero-gallery-note { position: absolute; bottom: var(--space-4); left: var(--space-4); z-index: 2; margin: 0; padding-left: var(--space-3); border-left: 1px solid rgb(252 248 241 / 58%); color: var(--color-paper); font-size: .625rem; letter-spacing: .14em; text-shadow: 0 1px 8px rgb(42 27 21 / 48%); text-transform: uppercase; }
+.hero-gallery-note { position: absolute; bottom: var(--space-4); left: var(--space-4); z-index: 2; margin: 0; padding-left: var(--space-3); border-left: 1px solid rgb(252 248 241 / 58%); color: var(--color-paper); font-size: .6875rem; font-weight: 600; letter-spacing: .13em; text-shadow: 0 1px 8px rgb(42 27 21 / 48%); text-transform: uppercase; }
 .hero-gallery-note span { display: block; margin-bottom: .15rem; font-family: var(--font-display); font-size: 1.2rem; font-style: italic; font-weight: 500; letter-spacing: .01em; text-transform: none; }
 .hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(3.75rem, 10vw, 6rem) var(--gutter) var(--space-6); }
 .hero h1 { width: 100%; margin: var(--space-4) 0 var(--space-5); font-size: clamp(3.15rem, 14vw, 6.5rem); letter-spacing: -.052em; line-height: .96; text-wrap: nowrap; }
@@ -234,6 +234,8 @@ p { text-wrap: pretty; }
 .visit-info > div { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-line); }
 .visit-info span { font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .visit-info p { margin-bottom: 0; color: var(--color-ink-soft); }
+.visit-info > div:first-child { padding-left: var(--space-4); border-left: 1px solid var(--color-gold); }
+.visit-info > div:first-child p { color: var(--color-ink); font-family: var(--font-display); font-size: 1.2rem; font-style: italic; font-weight: 500; line-height: 1.35; }
 .reservation-pending { display: flex; justify-content: space-between; gap: var(--space-3); margin-top: var(--space-5); padding: var(--space-3) 0 0; border-top: 1px solid var(--color-line); color: var(--color-ink-soft); }
 .reservation-pending small { text-align: right; }
 
@@ -245,6 +247,9 @@ p { text-wrap: pretty; }
 .footer-details > div { display: grid; grid-template-columns: 7rem 1fr; gap: var(--space-3); padding-block: var(--space-3); border-bottom: 1px solid var(--color-line-inverse); }
 .footer-details span { color: var(--color-paper-subtle); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .footer-details p { color: var(--color-paper-strong); font-size: var(--text-small); }
+.footer-details > div:first-child { border-left: 1px solid var(--color-gold); }
+.footer-details > div:first-child > * { margin-left: var(--space-3); }
+.footer-details > div:first-child p { color: var(--color-paper); font-family: var(--font-display); font-size: .9375rem; font-style: italic; line-height: 1.45; }
 .footer-navigation { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-1) var(--space-4); font-size: var(--text-small); }
 .footer-legal { display: flex; flex-wrap: wrap; gap: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--color-line-inverse); color: var(--color-paper-subtle); font-size: var(--text-small); }
 .site-footer small { align-self: end; color: var(--color-paper-subtle); }
@@ -391,6 +396,8 @@ p { text-wrap: pretty; }
 .visit-grid article { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-line); }
 .visit-grid span { font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .visit-grid p, .privacy-note { color: var(--color-ink-soft); }
+.visit-grid article:first-child { padding-left: var(--space-4); border-left: 1px solid var(--color-gold); }
+.visit-grid article:first-child p { color: var(--color-ink); font-family: var(--font-display); font-size: 1.2rem; font-style: italic; font-weight: 500; line-height: 1.35; }
 .privacy-note { max-width: var(--copy-max); margin: 0; font-size: var(--text-small); }
 .visit-grid a, .visit-info a, .footer-details a { text-decoration-color: color-mix(in srgb, var(--color-gold) 65%, transparent); text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 .opening-hours { margin: var(--space-3) 0 0; color: var(--color-ink-soft); font-size: var(--text-small); }
@@ -405,7 +412,8 @@ p { text-wrap: pretty; }
   color: var(--color-gold-soft);
 }
 
-.hero .eyebrow { color: var(--color-ink-soft); }
+.hero .eyebrow,
+.salon-hero-copy > .eyebrow { color: var(--color-burgundy); letter-spacing: .15em; }
 
 .site-header nav a {
   letter-spacing: .045em;
