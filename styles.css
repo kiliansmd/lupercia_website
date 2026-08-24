@@ -1,26 +1,32 @@
 /* Lupercia — warm editorial tea salon */
 :root {
-  --color-ivory: #f8f1e5;
-  --color-paper: #fcf8f1;
-  --color-ink: #321f17;
-  --color-ink-soft: #716158;
-  --color-taupe: #e5d5c1;
-  --color-taupe-light: #f1e7d9;
-  --color-leaf: #9aa08c;
-  --color-leaf-dark: #737966;
-  --color-terracotta: #a45c0b;
-  --color-burgundy: #68311f;
-  --color-gold: #c78225;
-  --color-gold-soft: #edcf9b;
-  --color-sage-wash: #f4eee3;
-  --color-peach-wash: #f3e4d1;
-  --color-deep-warm: #502a1c;
-  --color-brand-black: #2a1b15;
+  --paper: #f3eee4;
+  --paper-deep: #e9e0d0;
+  --ink: #241b15;
+  --ink-soft: #6b5c52;
+  --tea-green: #2c3a2b;
+  --seal-gold: #b08a3c;
+  --color-ivory: var(--paper);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-taupe: var(--paper-deep);
+  --color-taupe-light: var(--paper-deep);
+  --color-leaf: var(--tea-green);
+  --color-leaf-dark: var(--tea-green);
+  --color-terracotta: var(--tea-green);
+  --color-burgundy: var(--tea-green);
+  --color-gold: var(--seal-gold);
+  --color-gold-soft: var(--paper-deep);
+  --color-sage-wash: var(--paper-deep);
+  --color-peach-wash: var(--paper-deep);
+  --color-deep-warm: var(--tea-green);
+  --color-brand-black: var(--tea-green);
   --color-line: rgb(50 31 23 / 10%);
   --color-line-inverse: rgb(251 248 240 / 17%);
   --color-paper-strong: rgb(252 248 241 / 76%);
   --color-paper-subtle: rgb(252 248 241 / 52%);
-  --font-display: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --font-display: "Fraunces", "DejaVu Serif", serif;
   --font-functional: "Source Sans 3", "Segoe UI", Arial, sans-serif;
   --text-display: clamp(3.75rem, 16vw, 7.25rem);
   --text-h2: clamp(2.8rem, 10vw, 5.5rem);
@@ -29,10 +35,10 @@
   --text-body: clamp(0.96875rem, 0.35vw + 0.9rem, 1.0625rem);
   --text-small: 0.8125rem;
   --text-label: 0.71875rem;
-  --leading-display: 0.9;
-  --leading-heading: 0.98;
+  --leading-display: 1.02;
+  --leading-heading: 1.02;
   --leading-body: 1.62;
-  --tracking-display: -0.047em;
+  --tracking-display: -0.015em;
   --tracking-label: 0.13em;
   --space-1: 0.5rem;
   --space-2: 0.75rem;
@@ -299,8 +305,6 @@ p { text-wrap: pretty; }
 .events-hero > div:first-child { display: flex; flex-direction: column; justify-content: flex-end; min-height: 36rem; padding: var(--space-7) var(--gutter); }
 .events-hero h1 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
 .events-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
-.events-hero-mark { display: grid; place-items: center; min-height: 28rem; overflow: hidden; background: var(--color-leaf-dark); }
-.events-hero-mark span { color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 17vw, 10rem); font-style: italic; letter-spacing: -.05em; line-height: .72; text-align: center; }
 .next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { display: grid; gap: var(--space-7); }
 .next-event-deep h2, .upcoming-events h2, .recurring-events h2, .event-formats h2, .private-events h2, .events-cta h2 { max-width: 10ch; margin: var(--space-5) 0; font-size: var(--text-h2); letter-spacing: var(--tracking-display); line-height: var(--leading-heading); }
 .next-event-deep { background: var(--color-taupe-light); }
@@ -333,10 +337,6 @@ p { text-wrap: pretty; }
 
 /* Maria — personal editorial story */
 .maria-hero { display: grid; background: var(--color-paper); }
-.maria-portrait { position: relative; min-height: 40rem; overflow: hidden; background: var(--color-burgundy); }
-.maria-portrait::before { position: absolute; top: 10%; left: 50%; width: 58%; aspect-ratio: .72; border-radius: 48% 48% 18% 18%; background: var(--color-taupe); content: ""; transform: translateX(-50%); }
-.maria-portrait::after { position: absolute; right: -12%; bottom: -7%; left: -12%; height: 50%; border-radius: 50% 50% 0 0; background: var(--color-leaf-dark); content: ""; }
-.maria-portrait span { position: absolute; right: var(--space-5); bottom: var(--space-4); z-index: 2; color: var(--color-paper); font-family: var(--font-display); font-size: clamp(5rem, 18vw, 11rem); font-style: italic; }
 .maria-hero-copy { display: flex; flex-direction: column; justify-content: flex-end; min-height: 38rem; padding: var(--space-7) var(--gutter); }
 .maria-hero h1 { max-width: 9ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
 .maria-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
@@ -366,12 +366,6 @@ p { text-wrap: pretty; }
 
 /* Salon & Besuch — atmosphere and planning */
 .salon-hero { display: grid; background: var(--color-paper); }
-.room-photo-placeholder { position: relative; display: grid; place-items: center; min-height: 36rem; overflow: hidden; background: var(--color-taupe); text-align: center; }
-.room-photo-placeholder::before, .room-photo-placeholder::after { position: absolute; border: 1px solid var(--color-gold); content: ""; }
-.room-photo-placeholder::before { inset: 8%; }
-.room-photo-placeholder::after { top: 15%; bottom: 15%; left: 50%; }
-.room-photo-placeholder span { z-index: 1; font-family: var(--font-display); font-size: clamp(3.5rem, 12vw, 7rem); font-style: italic; letter-spacing: -.04em; line-height: .8; }
-.room-photo-placeholder small { position: absolute; bottom: var(--space-4); z-index: 1; font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .salon-hero-copy { display: flex; flex-direction: column; justify-content: flex-end; min-height: 38rem; padding: var(--space-7) var(--gutter); }
 .salon-hero h1 { max-width: 9ch; margin: var(--space-5) 0; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: var(--leading-display); }
 .salon-hero h1 em { color: var(--color-terracotta); font-weight: 400; }
@@ -539,13 +533,13 @@ p { text-wrap: pretty; }
   .format-lines article > p { grid-column: 2; }
   .format-lines article > h3 { margin-top: 0; }
   .maria-hero { grid-template-columns: .9fr 1.1fr; min-height: 50rem; }
-  .maria-portrait, .maria-hero-copy { min-height: 50rem; }
+
   .maria-intro, .name-story, .sommelier, .argentina-story, .selection-philosophy, .hostess, .maria-closing, .maria-visit { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .tea-relationship { grid-template-columns: .85fr 1.15fr; min-height: 48rem; }
   .tea-relationship-mark { min-height: 48rem; }
   .tea-relationship-copy { display: flex; flex-direction: column; justify-content: center; }
   .salon-hero { grid-template-columns: 1.1fr .9fr; min-height: 50rem; }
-  .room-photo-placeholder, .salon-hero-copy { min-height: 50rem; }
+
   .salon-welcome, .salon-teatime, .salon-daily, .salon-taste, .salon-beverages, .salon-expect, .salon-visit { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .salon-expect li { grid-template-columns: .4fr 1fr; align-items: baseline; }
   .visit-grid { grid-template-columns: repeat(2, 1fr); }
@@ -619,191 +613,54 @@ p { text-wrap: pretty; }
   .site-header.open nav a { font-size: clamp(2rem, 10vw, 2.5rem); }
 }
 
-/* Südstadt salon — restrained, collected and quietly traditional */
-body {
-  background-color: var(--color-ivory);
-  background-image:
-    radial-gradient(circle at 18% 12%, rgb(252 248 241 / 14%) 0 0.75px, transparent 1px),
-    radial-gradient(circle at 76% 68%, rgb(104 49 31 / 2%) 0 0.75px, transparent 1px);
-  background-size: 23px 29px, 31px 37px;
-}
 
-h1, h2, h3 { font-weight: 500; }
-
-.site-header {
-  border-bottom-color: var(--color-line);
-  background: rgb(248 241 229 / 94%);
-  box-shadow: none;
-  backdrop-filter: blur(8px);
-}
-.site-header.is-scrolled { background: rgb(252 248 241 / 96%); }
-.site-header nav a { font-family: var(--font-display); font-size: .7rem; font-weight: 500; letter-spacing: .1em; }
-.brand-logo { box-shadow: none; }
-
-.hero-copy { position: relative; }
-.hero-copy::before { position: absolute; top: var(--space-6); left: var(--gutter); width: 3.75rem; height: 1px; background: #b98b3e; content: ""; }
-.hero h1 { text-shadow: 0 1px 1px rgb(42 27 21 / 5%); }
-.hero h1 em { color: var(--color-terracotta); }
-.hero-note { letter-spacing: .16em; }
-
-.section-shell { border-bottom: 1px solid var(--color-line); }
-.section-heading h2,
-.today h2,
-.maria h2,
-.quality h2,
-.salon h2,
-.instagram h2,
-.gift h2,
-.breakfast h2,
-.visit h2 { letter-spacing: -.035em; }
-
-.today-feature::before,
-.maria-copy::before,
-.quality-copy::before,
-.salon-copy::before,
-.section-heading::before { width: 3.75rem; background: #b98b3e; }
-.today-feature::before { width: 2rem; }
-.maria-copy::before { width: 4.5rem; }
-.quality-copy::before { width: 1.5rem; }
-.salon-copy::before { width: 3rem; }
-.next-event { border-top-width: 1px; }
-
-.room-photo-placeholder { outline: 1px solid rgb(252 248 241 / 48%); outline-offset: -.8rem; }
-.portrait-art { background: #5d3025; }
-
-.product-story { position: relative; border-color: rgb(50 31 23 / 12%); }
-.product-story h3 { letter-spacing: -.025em; }
-
-.salon-menu li span { color: #9a6b28; }
-.salon-menu .is-coming small { color: var(--color-ink-soft); font-style: italic; letter-spacing: .02em; text-transform: none; }
-.event { padding-block: clamp(2rem, 5vw, 3.5rem); }
-.event h3 { letter-spacing: -.02em; }
-
-.instagram { position: relative; }
-.instagram::before {
-  position: absolute;
-  top: var(--space-6);
-  right: var(--gutter);
-  color: rgb(139 90 32 / 48%);
-  content: "No. 01  ·  BONN";
-  font-size: .625rem;
-  letter-spacing: .2em;
-}
-
-.gift-mark { position: relative; background: #7b4632; }
-.gift-mark::before { position: absolute; inset: 1rem; border: 1px solid rgb(252 248 241 / 38%); content: ""; }
-.gift-mark span { z-index: 1; color: #f7e8cc; }
-
-.button { letter-spacing: .065em; text-transform: uppercase; }
-.button--primary { box-shadow: none; }
-.button--pending { letter-spacing: .02em; text-transform: none; }
-.reservation-pending { background: transparent; }
-
-.site-footer {
-  background-color: #2d211b;
-  background-image: linear-gradient(135deg, rgb(252 248 241 / 2%) 25%, transparent 25%, transparent 75%, rgb(252 248 241 / 2%) 75%);
-  background-size: 8px 8px;
-}
-.footer-brand p { color: #edcf9b; font-size: 1.45rem; letter-spacing: .02em; }
-.footer-navigation a { font-family: var(--font-display); font-size: .8125rem; letter-spacing: .035em; }
-
-@media (min-width: 48rem) {
-  .instagram-heading > p { padding-bottom: var(--space-2); }
-}
-
-/* Curated section cadence — measured variation without changing the content grid */
-.today,
-.bio-quality,
-.upcoming-events,
-.name-story,
-.salon-daily {
-  padding-top: var(--space-7);
-}
-
-.quality,
-.tableware-deep,
-.private-events,
-.selection-philosophy,
-.salon-beverages {
-  padding-bottom: var(--space-7);
-}
-
-.recurring-events,
-.hostess,
-.salon-expect {
-  padding-top: calc(var(--space-8) + var(--space-4));
-}
-
-.quality-copy > p,
-.salon-copy > p,
-.bio-quality > div:last-child,
-.private-events > div,
-.salon-beverages > div:last-child {
-  max-width: 31rem;
-}
-
-.maria-copy { max-width: 33rem; }
-.event-formats .format-lines { max-width: 52rem; }
-.salon-expect ul { max-width: 58rem; }
-
-@media (min-width: 48rem) {
-  .maria { grid-template-columns: minmax(18rem, 1.05fr) minmax(20rem, .95fr); }
-  .today { grid-template-columns: minmax(24rem, 1.4fr) minmax(13rem, .55fr); gap: var(--space-7); }
-  .next-event { padding: 0 0 0 var(--space-5); border-top: 0; border-left: 1px solid var(--color-gold); }
-  .quality { grid-template-columns: minmax(12rem, .55fr) minmax(24rem, 1.15fr); }
-  .salon { grid-template-columns: minmax(14rem, .85fr) minmax(24rem, 1.15fr); }
-  .gift { grid-template-columns: minmax(12rem, .6fr) minmax(24rem, 1.2fr); }
-  .quality-copy,
-  .bio-quality > div:last-child { padding-top: var(--space-6); }
-  .quality-copy > p:last-of-type { margin-left: var(--space-5); }
-
-  .maria-intro,
-  .argentina-story,
-  .private-events,
-  .salon-welcome {
-    grid-template-columns: minmax(12rem, .55fr) minmax(24rem, 1.2fr);
-  }
-
-  .name-story,
-  .selection-philosophy,
-  .salon-teatime {
-    grid-template-columns: minmax(18rem, 1.05fr) minmax(20rem, .8fr);
-  }
-
-  .event-formats,
-  .salon-expect {
-    grid-template-columns: minmax(12rem, .65fr) minmax(25rem, 1.25fr);
-  }
-
-  .name-story > div:last-child,
-  .selection-philosophy > div:last-child,
-  .salon-teatime > div:last-child {
-    padding-top: var(--space-6);
-  }
-
-  .argentina-story > .eyebrow,
-  .private-events > .eyebrow {
-    align-self: center;
-  }
-
-  .portrait-art {
-    margin-left: calc(var(--gutter) * -.3);
-  }
-
-  .tableware-mark {
-    margin-right: calc(var(--gutter) * -.25);
-  }
-}
-
-@media (min-width: 64rem) {
-  .maria { grid-template-columns: minmax(26rem, 1.08fr) minmax(24rem, .92fr); }
-  .portrait-art { min-height: 56rem; margin-block: calc(var(--space-4) * -1); }
-  .mate-editorial { grid-template-columns: minmax(25rem, .75fr) minmax(34rem, 1.25fr); }
-  .tea-relationship { grid-template-columns: minmax(24rem, .72fr) minmax(35rem, 1.28fr); }
-  .salon-copy { margin-left: var(--space-3); }
-  .bio-quality > div:last-child { margin-left: var(--space-3); }
-  .instagram-heading > div:last-child { justify-self: end; max-width: 28rem; margin-right: var(--space-4); }
-  .gift > div:last-child { max-width: 30rem; margin-top: var(--space-4); }
-  .hostess-quote { margin-right: calc(var(--space-4) * -1); }
-  .event-formats .format-lines { margin-right: calc(var(--gutter) * -.12); }
-}
+/* Lupercia identity refresh — label, engraving and deep tea green */
+@font-face { font-family: "Lupercia Sans"; src: url("/assets/fonts/DejaVuSans.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Lupercia Serif"; src: url("/assets/fonts/DejaVuSerif.ttf") format("truetype"); font-display: swap; }
+:root { --font-display: "Lupercia Serif", serif; --font-functional: "Lupercia Sans", sans-serif; --section-normal: var(--space-8); --section-compact: var(--space-7); --bleed: clamp(1rem,3vw,3rem); }
+body { background: var(--paper); }
+h1,h2,h3 { letter-spacing: var(--tracking-display); line-height: 1.02; }
+h1 em,h2 em,h3 em,.tea-daily strong,figcaption span,.footer-brand p,.hostess-quote { font-family: var(--font-display); font-style: italic; }
+.section-shell { padding-block: var(--section-normal); border: 0; }
+.section-shell--compact { padding-block: var(--section-compact); }
+.eyebrow { font-size: .75rem; }
+.site-header { border-bottom-color: color-mix(in srgb,var(--seal-gold) 35%,transparent); background: rgb(243 238 228 / 96%); }
+.wordmark,.footer-brand .wordmark { width: clamp(10rem,15vw,13.5rem); }
+.brand-logo,.brand-logo--footer { width: 100%; height: auto; border: 0; border-radius: 0; background: transparent; }
+.button { min-height: 3.25rem; padding-inline: 1.4rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.button--primary { border-color: var(--tea-green); background: var(--tea-green); color: var(--paper); }
+.button--primary:hover { border-color: var(--ink); background: var(--ink); }
+.hero { background: var(--paper); }
+.hero-media { min-height: 68svh; overflow: hidden; }
+.hero-media picture,.hero-media img { width: 100%; height: 100%; }
+.hero-media img { object-fit: cover; object-position: 16% 35%; filter: saturate(.68) sepia(.1) contrast(.96) brightness(.94); }
+.hero-copy { margin: 0; background: var(--paper); }
+.hero h1 span,.hero h1 em { display: block; white-space: normal; text-shadow: none; }
+.hero h1 em { color: var(--tea-green); }
+.today { background: var(--paper-deep); }
+.tea-daily { position: relative; max-width: 34rem; padding: 3.5rem 4rem; border: 1px solid var(--seal-gold); border-radius: 50%; text-align: center; }
+.tea-daily::before { position:absolute; inset:.45rem; border:1px solid color-mix(in srgb,var(--seal-gold) 60%,transparent); border-radius:50%; content:""; }
+.maria,.quality,.salon,.instagram,.gift,.visit { background: var(--paper); }
+.salon,.gift,.instagram { background: var(--paper-deep); }
+.product-story--tea { background: var(--tea-green); color: var(--paper); }
+.product-story--tea > p:last-child,.product-story--tea .eyebrow { color: rgb(243 238 228 / 78%); }
+.gift-label { display:flex; flex-direction:column; align-items:center; justify-content:center; width:min(100%,24rem); aspect-ratio:4/5; padding:2rem; border:2px solid var(--seal-gold); outline:1px solid var(--seal-gold); outline-offset:-.7rem; border-radius:50%; text-align:center; }
+.gift-label span,.gift-label small { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; }
+.gift-label strong { margin-block:1rem; font-family:var(--font-display); font-size:2rem; font-style:italic; font-weight:400; }
+.instagram-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--seal-gold); }
+.instagram-grid a { min-height:15rem; overflow:hidden; background:var(--tea-green); color:var(--paper); }
+.instagram-grid img { height:100%; object-fit:cover; filter:saturate(.72) sepia(.08); }
+.instagram-card { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2rem; text-align:center; }
+.instagram-card strong { font-family:var(--font-display); font-size:clamp(1.5rem,4vw,3rem); font-style:italic; }
+.page-hero-photo,.story-photo { min-height:32rem; overflow:hidden; }
+.page-hero-photo img,.story-photo img { width:100%;height:100%;object-fit:cover;filter:saturate(.72) sepia(.08); }
+.site-footer { border-top-color:var(--seal-gold); background:var(--tea-green); background-image:none; color:var(--paper); }
+.footer-details span,.footer-legal,.site-footer small { color:rgb(243 238 228 / 78%); }
+.footer-brand .brand-logo { filter:sepia(1) saturate(.7) brightness(1.7); }
+@media (min-width:64rem) { .site-header nav a,.booking-link { font-size:.75rem; letter-spacing:.08em; } .hero { grid-template-columns:1fr 1fr; } .hero-media { grid-column:2;grid-row:1; } .hero-copy { grid-column:1;grid-row:1; } }
+@media (max-width:47.999rem) { .instagram-grid { grid-template-columns:1fr; } .instagram-grid a { min-height:22rem; } }
+@media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important} }
+.legal-page { max-width: 70rem; min-height: 70svh; }
+.legal-page h1 { margin-block: 2rem 4rem; font-size: var(--text-display); }
+.legal-page section { max-width: 46rem; margin-left: auto; }
+.legal-page h2 { margin-top: 3rem; font-size: clamp(1.5rem,3vw,2.25rem); }

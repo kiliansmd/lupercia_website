@@ -18,7 +18,7 @@ export const siteContent = Object.freeze({
     { id: 'tea', label: 'Tee & Genuss', href: '/tee-genuss/', status: 'available' },
     { id: 'events', label: 'Veranstaltungen', href: '/veranstaltungen/', status: 'available' },
     { id: 'maria', label: 'Maria', href: '/maria/', status: 'available' },
-    { id: 'gift-box', label: 'Geschenkbox', href: '#geschenkbox', status: 'coming-soon' },
+    { id: 'gift-box', label: 'Geschenkbox', href: '#geschenkbox', status: 'available' },
     { id: 'visit', label: 'Besuch', href: '/salon/#besuch', status: 'available' },
   ],
   eventSystem: {
@@ -43,14 +43,14 @@ export const siteContent = Object.freeze({
     openingHours: { value: { monday: null, tuesday: '11:00–19:00', wednesday: '11:00–19:00', thursday: '11:00–19:00', friday: '11:00–19:00', saturday: '12:00–17:00', sunday: null }, status: 'available' },
     phone: { label: '01516 7970350', href: 'tel:+4915167970350', status: 'available' },
     email: { label: 'E-Mail', href: null, status: 'not-provided' },
-    reservation: { href: null, status: 'coming-soon' },
+    reservation: { href: 'tel:+4915167970350', status: 'available' },
     accessibility: { value: null, status: 'coming-soon' },
     map: { embed: null, provider: null, consentRequired: true, status: 'not-configured' },
   },
   conversionActions: {
-    reservation: { label: 'Tisch reservieren', href: null, status: 'coming-soon' },
+    reservation: { label: 'Tisch reservieren', href: 'tel:+4915167970350', status: 'available' },
     event: { viewLabel: 'Event ansehen', bookingLabel: 'Event anmelden' },
-    giftBox: { label: 'Geschenkbox anfragen', href: null, status: 'coming-soon' },
+    giftBox: { label: 'Geschenkbox anfragen', href: 'tel:+4915167970350', status: 'available' },
     visit: { label: 'Lupercia besuchen', href: '/salon/#besuch', status: 'available' },
   },
   teaOfTheDay: {
@@ -112,7 +112,6 @@ export const siteContent = Object.freeze({
     { label: 'Alkoholfreie Tea Cocktails', priority: 'primary', status: 'available' },
     { label: 'Tea Time', priority: 'primary', status: 'available' },
     { label: 'Coffee', priority: 'secondary', status: 'available' },
-    { label: 'Frühstück', priority: 'secondary', status: 'coming-soon' },
   ],
   events: [
     {
@@ -233,7 +232,7 @@ export const siteContent = Object.freeze({
     openingHours: { value: { monday: null, tuesday: '11:00–19:00', wednesday: '11:00–19:00', thursday: '11:00–19:00', friday: '11:00–19:00', saturday: '12:00–17:00', sunday: null }, status: 'available' },
     phone: { label: '01516 7970350', href: 'tel:+4915167970350', status: 'available' },
     email: { label: 'E-Mail', href: null, status: 'not-provided' },
-    reservation: { href: null, status: 'coming-soon' },
+    reservation: { href: 'tel:+4915167970350', status: 'available' },
     map: { embed: null, status: 'not-configured' },
   },
   links: {
