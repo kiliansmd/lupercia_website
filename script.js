@@ -163,10 +163,6 @@ const renderEventPage = () => {
 };
 
 renderTeaOfTheDay();
-renderNextEvent();
-renderProductWorld();
-renderSalonOffer();
-renderEvents();
 renderTeaFamilies();
 renderDelicacies();
 renderEventPage();

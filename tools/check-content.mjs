@@ -31,8 +31,12 @@ if (siteContent.salonVisit.address.status !== 'available' || siteContent.salonVi
   throw new Error('Published visit and social details are incomplete.');
 }
 
-if (!homePage.includes('<script src="https://elfsightcdn.com/platform.js" async></script>') || !homePage.includes('elfsight-app-eea1093c-dd61-4d51-a3f2-c1a335162a59') || homePage.includes('data-elfsight-app-lazy')) {
-  throw new Error('The Instagram feed must load immediately through the published Elfsight widget.');
+if (homePage.includes('elfsightcdn.com') || homePage.includes('fonts.googleapis.com') || !homePage.includes('class="instagram-grid"')) {
+  throw new Error('Home page must use local fonts and the static, privacy-friendly Instagram gallery.');
+}
+
+if (!homePage.includes('/impressum/') || !homePage.includes('/datenschutz/') || homePage.includes('coming soon') || homePage.includes('· bald')) {
+  throw new Error('Published home content must expose legal pages without pending-action copy.');
 }
 
 console.log(`Content model: OK (${siteContent.events.length} events, ${siteContent.eventSystem.categories.length} categories)`);
