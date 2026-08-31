@@ -807,3 +807,182 @@ h1, h2, h3 { font-weight: 500; }
   .hostess-quote { margin-right: calc(var(--space-4) * -1); }
   .event-formats .format-lines { margin-right: calc(var(--gutter) * -.12); }
 }
+
+/* Final harmony pass — one quiet visual language across every page */
+:root {
+  --color-copper: #9a612f;
+  --color-cream-deep: #eee0cd;
+  --line-accent: color-mix(in srgb, var(--color-gold) 54%, transparent);
+}
+
+main { overflow: clip; }
+
+.section-shell,
+.tea-hero-copy,
+.maria-hero-copy,
+.salon-hero-copy,
+.events-hero > div:first-child,
+.mate-editorial-copy,
+.tea-relationship-copy {
+  position: relative;
+}
+
+/* A fine inner rule gives the long pages a shared editorial spine. */
+.section-shell::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--gutter);
+  width: 1px;
+  background: linear-gradient(transparent, var(--color-line) 12%, var(--color-line) 88%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
+.eyebrow { color: color-mix(in srgb, var(--color-ink-soft) 88%, var(--color-copper)); }
+
+.eyebrow::before {
+  display: inline-block;
+  width: .35rem;
+  height: .35rem;
+  margin-right: .65rem;
+  border: 1px solid var(--line-accent);
+  border-radius: var(--radius-round);
+  content: "";
+  vertical-align: .08em;
+}
+
+.hero-gallery,
+.tea-hero-media,
+.maria-portrait,
+.portrait-art {
+  box-shadow: inset 0 0 0 1px rgb(252 248 241 / 20%);
+}
+
+.hero-photo--window {
+  border-width: 5px;
+  border-color: var(--color-paper);
+  box-shadow: 0 1.5rem 3.5rem rgb(50 31 23 / 18%);
+}
+
+.hero-gallery-note,
+.portrait-art figcaption,
+.maria-portrait figcaption {
+  backdrop-filter: blur(2px);
+}
+
+.button--primary::after {
+  margin-left: .25rem;
+  content: "\2192";
+  font-size: 1.05rem;
+  font-weight: 400;
+  transition: transform var(--duration-fast) var(--ease-editorial);
+}
+
+.button--primary:hover::after { transform: translateX(.2rem); }
+
+.hero .button--primary::after { content: "\2198"; }
+
+.tea-daily strong,
+.hostess-quote p,
+.tea-relationship-copy .body-large { color: var(--color-burgundy); }
+
+.salon-menu li,
+.event,
+.event-system-card,
+.format-lines article,
+.tea-families article {
+  position: relative;
+}
+
+.salon-menu li::after,
+.event::after,
+.event-system-card::after,
+.format-lines article::after,
+.tea-families article::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-copper);
+  content: "";
+  transition: width var(--duration-slow) var(--ease-editorial);
+}
+
+.salon-menu li:hover::after,
+.event:hover::after,
+.event-system-card:hover::after,
+.format-lines article:hover::after,
+.tea-families article:hover::after { width: min(7rem, 32%); }
+
+.gift-mark,
+.tableware-mark,
+.events-hero-mark,
+.tea-relationship-mark {
+  isolation: isolate;
+}
+
+.gift-mark::after,
+.tableware-mark::after,
+.events-hero-mark::after,
+.tea-relationship-mark::after {
+  position: absolute;
+  z-index: -1;
+  width: clamp(7rem, 16vw, 13rem);
+  aspect-ratio: 1;
+  border: 1px solid rgb(252 248 241 / 25%);
+  border-radius: var(--radius-round);
+  content: "";
+  pointer-events: none;
+}
+
+.gift-mark::after,
+.tableware-mark::after { right: 8%; bottom: 8%; }
+.events-hero-mark::after,
+.tea-relationship-mark::after { top: 9%; left: 9%; }
+
+.visit-grid article,
+.footer-details > div { padding-inline: var(--space-3); }
+
+.opening-hours div { transition: color var(--duration-fast) ease; }
+.opening-hours div:hover { color: var(--color-burgundy); }
+
+@media (max-width: 47.999rem) {
+  .section-shell::after { opacity: .55; }
+  .section-shell { padding-left: calc(var(--gutter) + .5rem); }
+  .hero-gallery { min-height: 62svh; }
+  .hero-photo--room { right: 8%; }
+  .hero-photo--window { right: 3%; bottom: 5%; width: 38%; height: 50%; }
+  .hero-copy::before { top: var(--space-5); }
+  .hero h1 { text-wrap: balance; }
+  .site-header.open nav { gap: 1rem; }
+  .site-header.open nav a { letter-spacing: -.035em; }
+  .visit-grid article { padding-inline: var(--space-3); }
+}
+
+@media (min-width: 48rem) {
+  .section-shell::after { left: calc(var(--gutter) * .55); }
+  .hero-gallery-note { bottom: var(--space-5); left: var(--space-5); }
+  .hero-photo--window { right: 3%; bottom: 6%; width: 33%; height: 52%; }
+}
+
+@media (min-width: 64rem) {
+  .site-header nav { padding: .35rem var(--space-3); border-inline: 1px solid var(--color-line); }
+  .site-header nav a { padding-inline: .15rem; }
+  .hero-copy::after,
+  .tea-hero-copy::after,
+  .maria-hero-copy::after,
+  .salon-hero-copy::after,
+  .events-hero > div:first-child::after {
+    position: absolute;
+    right: var(--space-5);
+    bottom: var(--space-5);
+    color: color-mix(in srgb, var(--color-copper) 55%, transparent);
+    content: "LUPERCIA  \00B7  BONN";
+    font-size: .6rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    writing-mode: vertical-rl;
+  }
+}
