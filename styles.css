@@ -516,8 +516,8 @@ p { text-wrap: pretty; }
   .footer-details, .footer-navigation, .footer-legal { grid-column: 2; }
   .footer-details > div { grid-template-columns: 8rem 1fr; }
   .site-footer small { grid-column: 1; grid-row: 4; }
-  .tea-hero { grid-template-columns: .9fr 1.1fr; min-height: 48rem; }
-  .tea-hero-copy, .tea-hero-media { min-height: 48rem; }
+  .tea-hero { grid-template-columns: .9fr 1.1fr; min-height: calc(100svh - var(--header-height)); }
+  .tea-hero-copy, .tea-hero-media { min-height: calc(100svh - var(--header-height)); }
   .tea-core, .bio-quality, .daily-deep, .tableware-deep, .salon-drinks, .tea-time-deep, .tea-visit { grid-template-columns: minmax(15rem, .8fr) minmax(24rem, 1fr); }
   .tea-families article { grid-template-columns: .65fr 1fr; align-items: baseline; }
   .mate-editorial { grid-template-columns: .85fr 1.15fr; min-height: 48rem; }
@@ -525,8 +525,8 @@ p { text-wrap: pretty; }
   .mate-editorial-copy { display: flex; flex-direction: column; justify-content: center; }
   .delicacies-deep { display: grid; grid-template-columns: .8fr 1fr; gap: var(--space-7); }
   .delicacies-deep ul { margin-top: 0; }
-  .events-hero { grid-template-columns: 1.1fr .9fr; min-height: 48rem; }
-  .events-hero > div { min-height: 48rem; }
+  .events-hero { grid-template-columns: 1.1fr .9fr; min-height: calc(100svh - var(--header-height)); }
+  .events-hero > div { min-height: calc(100svh - var(--header-height)); }
   .next-event-deep, .upcoming-events, .recurring-events, .event-formats, .private-events, .events-cta { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .event-system-card:not(.event-system-card--featured) { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: var(--space-2) var(--space-5); align-items: start; }
   .event-system-card:not(.event-system-card--featured) .eyebrow { grid-column: 1; grid-row: 1; }
@@ -538,14 +538,14 @@ p { text-wrap: pretty; }
   .format-lines article > h3,
   .format-lines article > p { grid-column: 2; }
   .format-lines article > h3 { margin-top: 0; }
-  .maria-hero { grid-template-columns: .9fr 1.1fr; min-height: 50rem; }
-  .maria-portrait, .maria-hero-copy { min-height: 50rem; }
+  .maria-hero { grid-template-columns: .9fr 1.1fr; min-height: calc(100svh - var(--header-height)); }
+  .maria-portrait, .maria-hero-copy { min-height: calc(100svh - var(--header-height)); }
   .maria-intro, .name-story, .sommelier, .argentina-story, .selection-philosophy, .hostess, .maria-closing, .maria-visit { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .tea-relationship { grid-template-columns: .85fr 1.15fr; min-height: 48rem; }
   .tea-relationship-mark { min-height: 48rem; }
   .tea-relationship-copy { display: flex; flex-direction: column; justify-content: center; }
-  .salon-hero { grid-template-columns: 1.1fr .9fr; min-height: 50rem; }
-  .room-photo-placeholder, .salon-hero-copy { min-height: 50rem; }
+  .salon-hero { grid-template-columns: 1.1fr .9fr; min-height: calc(100svh - var(--header-height)); }
+  .room-photo-placeholder, .salon-hero-copy { min-height: calc(100svh - var(--header-height)); }
   .salon-welcome, .salon-teatime, .salon-daily, .salon-taste, .salon-beverages, .salon-expect, .salon-visit { grid-template-columns: minmax(13rem, .75fr) minmax(23rem, 1fr); }
   .salon-expect li { grid-template-columns: .4fr 1fr; align-items: baseline; }
   .visit-grid { grid-template-columns: repeat(2, 1fr); }
