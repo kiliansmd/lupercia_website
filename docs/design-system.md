@@ -140,3 +140,20 @@ statische Coming-soon-Zeile dargestellt.
   werden nicht eingesetzt.
 - Die visuelle Hierarchie beginnt pro Section mit Label, Editorial Headline und
   optionalem ruhigem Fließtext. Zusätzliche UI wird vermieden.
+
+## Harmonisierung 2026
+
+Der abschließende visuelle Feinschliff führt die fünf Seiten noch enger zusammen:
+
+- Eine sehr feine, auslaufende Innenlinie bildet auf langen Seiten eine
+  wiederkehrende redaktionelle Achse, ohne neue Container oder Karten zu erzeugen.
+- Kleine Kreiszeichen an den Eyebrows, Kupferdetails und dezente Signaturen in
+  den großen Hero-Bereichen schaffen Wiedererkennung bei geringer visueller Lautstärke.
+- Bild-im-Bild-Kompositionen erhalten einen etwas materielleren Papierfalz und
+  ruhigere Tiefenwirkung. Die abstrakten Markenflächen werden durch eine einzelne
+  Kreislinie verbunden, die an Tasse, Siegel und gedeckten Tisch erinnert.
+- Primäre Aktionen tragen einen zurückhaltenden Richtungspfeil; Listen und
+  Terminkarten reagieren mit einer kurzen, langsam einlaufenden Linie statt mit
+  Bewegung oder Schatten.
+- Auf kleinen Viewports bleiben Bildausschnitte, Seitenachse und Navigation
+  großzügig, ohne die verfügbare Lesebreite oder Touch-Ziele zu reduzieren.
