@@ -502,10 +502,18 @@ p { text-wrap: pretty; }
   .product-story--tableware h3,
   .product-story--food h3 { margin-top: var(--space-6); }
   .quality, .salon, .gift, .breakfast, .visit-heading { grid-template-columns: minmax(14rem, .7fr) minmax(24rem, 1fr); }
-  .event { grid-template-columns: minmax(19rem, .9fr) minmax(18rem, 1fr); align-items: start; gap: var(--space-7); }
-  .event > div:first-child { display: grid; grid-template-columns: 7rem minmax(10rem, 1fr); gap: var(--space-4); align-items: start; }
-  .event > div:first-child h3 { margin-top: 0; }
-  .event--compact { grid-template-columns: 9rem 1fr; align-items: baseline; gap: var(--space-4); }
+  .events .section-heading,
+  .event { grid-template-columns: minmax(12rem, .9fr) minmax(18rem, 1fr); column-gap: var(--space-7); }
+  .events .section-heading { display: grid; align-items: start; }
+  .events .section-heading h2 { grid-column: 2; margin-top: 0; }
+  .event { align-items: start; }
+  .event > div:first-child { display: contents; }
+  .event > div:first-child > .eyebrow { grid-column: 1; }
+  .event > div:first-child > h3,
+  .event > div:nth-child(2) { grid-column: 2; }
+  .event > div:first-child > h3 { margin-top: 0; }
+  .event > div:nth-child(2) { margin-top: var(--space-3); }
+  .event--compact { align-items: baseline; }
   .event--compact h3 { grid-column: 2; grid-row: 1; margin-top: 0; }
   .event--compact span { grid-column: 1; grid-row: 1; }
   .instagram-heading { grid-template-columns: minmax(18rem, 1fr) minmax(20rem, .7fr); }
