@@ -73,6 +73,6 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-window.matchMedia('(min-width: 72rem)').addEventListener('change', ({ matches }) => {
+window.matchMedia('(min-width: 56rem)').addEventListener('change', ({ matches }) => {
   if (matches && header.classList.contains('open')) closeMenu();
 });
