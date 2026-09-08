@@ -1,43 +1,38 @@
-import { readFile } from 'node:fs/promises';
+import { readdir, stat } from 'node:fs/promises';
+import { join } from 'node:path';
 
-const encodedLogo = await readFile(new URL('../assets/lupercia-logo.png.base64', import.meta.url), 'utf8');
-const logo = Buffer.from(encodedLogo.replaceAll(/\s/g, ''), 'base64');
-const pngSignature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+// TECH-01/TECH-02: Das Logo war 1,5 MB gross, die Schriften 1,1 MB unkomprimiertes TTF.
+const root = new URL('../assets/', import.meta.url).pathname;
+const limits = [
+  [/^lupercia-logo\.webp$/, 32 * 1024, 'TECH-01 Logo'],
+  [/^favicon\.png$/, 16 * 1024, 'TECH-01 Favicon'],
+  [/\.woff2$/, 96 * 1024, 'TECH-02 Schriftschnitt'],
+  [/\.(webp|png|jpg)$/, 480 * 1024, 'Foto'],
+];
+const fail = [];
+let checked = 0;
 
-if (!logo.subarray(0, 8).equals(pngSignature)) {
-  throw new Error('Logo source does not decode to a PNG file.');
-}
-
-const width = logo.readUInt32BE(16);
-const height = logo.readUInt32BE(20);
-const bitDepth = logo[24];
-const colorType = logo[25];
-
-if (width !== 1254 || height !== 1254 || bitDepth !== 8 || colorType !== 2) {
-  throw new Error(`Expected the white-backed 1254×1254 RGB PNG, received ${width}×${height}, depth ${bitDepth}, color type ${colorType}.`);
-}
-
-console.log('Logo asset: OK (white-backed 1254×1254 RGB PNG, text-only source)');
-
-const heroImages = new Map([
-  ['lupercia-fensterplatz.png', [765, 1020]],
-  ['lupercia-schaufenster.png', [742, 1020]],
-  ['maria-moreno.png', [765, 1020]],
-]);
-
-for (const [image, [expectedWidth, expectedHeight]] of heroImages) {
-  const encodedImage = await readFile(new URL(`../assets/images/${image}.base64`, import.meta.url), 'utf8');
-  const imageData = Buffer.from(encodedImage.replaceAll(/\s/g, ''), 'base64');
-
-  if (!imageData.subarray(0, 8).equals(pngSignature)) {
-    throw new Error(`${image} source does not decode to a PNG file.`);
-  }
-
-  const imageWidth = imageData.readUInt32BE(16);
-  const imageHeight = imageData.readUInt32BE(20);
-  if (imageWidth !== expectedWidth || imageHeight !== expectedHeight) {
-    throw new Error(`Expected ${image} to be ${expectedWidth}×${expectedHeight}, received ${imageWidth}×${imageHeight}.`);
+async function walk(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) { await walk(full); continue; }
+    if (/\.(ttf|otf|eot)$/.test(entry.name)) {
+      fail.push(`TECH-02: ${entry.name} — unkomprimiertes Schriftformat, WOFF2 erwartet.`);
+      continue;
+    }
+    const rule = limits.find(([pattern]) => pattern.test(entry.name));
+    if (!rule) continue;
+    const { size } = await stat(full);
+    checked += 1;
+    if (size > rule[1]) {
+      fail.push(`${rule[2]}: ${entry.name} ist ${Math.round(size / 1024)} KB, erlaubt sind ${Math.round(rule[1] / 1024)} KB.`);
+    }
   }
 }
+await walk(root);
 
-console.log('Photography assets: OK (3 portrait PNGs, text-only sources)');
+if (fail.length) {
+  console.error('Asset-Check fehlgeschlagen:\n  - ' + fail.join('\n  - '));
+  process.exit(1);
+}
+console.log(`Assets: OK (${checked} Dateien innerhalb der Budgets)`);

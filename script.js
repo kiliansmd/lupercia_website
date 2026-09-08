@@ -1,172 +1,78 @@
-import { siteContent } from './content/site-content.js';
+const root = document.documentElement;
+const viewportCanResizeFreely = window.matchMedia('(hover: hover) and (pointer: fine)');
+let measuredViewportWidth = 0;
+let viewportResizeFrame;
+
+const syncInitialViewport = ({ force = false } = {}) => {
+  const viewport = window.visualViewport;
+  const width = viewport?.width ?? window.innerWidth;
+  const height = viewport?.height ?? window.innerHeight;
+  const widthChanged = Math.abs(width - measuredViewportWidth) > 1;
+  root.style.setProperty('--dynamic-viewport', `${Math.round(height * 100) / 100}px`);
+  if (!force && !viewportCanResizeFreely.matches && !widthChanged) return;
+
+  root.style.setProperty('--initial-viewport', `${Math.round(height * 100) / 100}px`);
+  measuredViewportWidth = width;
+};
+
+const scheduleViewportSync = () => {
+  window.cancelAnimationFrame(viewportResizeFrame);
+  viewportResizeFrame = window.requestAnimationFrame(() => syncInitialViewport());
+};
+
+syncInitialViewport({ force: true });
+window.addEventListener('pageshow', () => {
+  syncInitialViewport({ force: true });
+});
+window.addEventListener('resize', scheduleViewportSync, { passive: true });
+window.visualViewport?.addEventListener('resize', scheduleViewportSync, { passive: true });
 
 const header = document.querySelector('.site-header');
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('#site-navigation');
-
-const element = (tag, className, text) => {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text) node.textContent = text;
-  return node;
-};
+const pageRegions = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
 
 const closeMenu = ({ restoreFocus = false } = {}) => {
   header.classList.remove('open');
   document.body.classList.remove('menu-open');
+  pageRegions.forEach((region) => { region.inert = false; });
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Menü öffnen');
   if (restoreFocus) menuButton.focus();
 };
 
+const openMenu = () => {
+  header.classList.add('open');
+  document.body.classList.add('menu-open');
+  pageRegions.forEach((region) => { region.inert = true; });
+  menuButton.setAttribute('aria-expanded', 'true');
+  menuButton.setAttribute('aria-label', 'Menü schließen');
+  navigation.querySelector('a')?.focus();
+};
+
 menuButton.addEventListener('click', () => {
-  const isOpen = header.classList.toggle('open');
-  document.body.classList.toggle('menu-open', isOpen);
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+  if (header.classList.contains('open')) closeMenu({ restoreFocus: true });
+  else openMenu();
 });
 
 navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && header.classList.contains('open')) closeMenu({ restoreFocus: true });
+  if (event.key !== 'Tab' || !header.classList.contains('open')) return;
+
+  const focusable = [...header.querySelectorAll('a[href], button:not([disabled])')];
+  const first = focusable[0];
+  const last = focusable.at(-1);
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
 });
 
-const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
-
-const renderTeaOfTheDay = () => {
-  const target = document.querySelector('[data-today-tea]');
-  if (!target) return;
-  const tea = siteContent.teaOfTheDay;
-  target.replaceChildren();
-
-  if (!tea.active) {
-    target.append(element('span', '', 'Heutige Auswahl'), element('strong', '', tea.fallback));
-    return;
-  }
-
-  target.append(
-    element('span', '', [tea.origin, ...tea.flavorProfile].filter(Boolean).join(' · ')),
-    element('strong', '', tea.name),
-  );
-};
-
-const renderNextEvent = () => {
-  const target = document.querySelector('[data-next-event]');
-  if (!target) return;
-  const nextEvent = siteContent.events.find(({ status }) => status === 'upcoming') ?? siteContent.events[0];
-  target.replaceChildren(element('h3', '', nextEvent.title), element('p', '', nextEvent.date ?? 'Weitere Termine folgen.'));
-};
-
-const renderProductWorld = () => {
-  const target = document.querySelector('[data-product-world]');
-  if (!target) return;
-  const classNames = { tea: 'tea', mate: 'mate', tableware: 'tableware', delicacies: 'food' };
-
-  target.replaceChildren(...siteContent.productWorld.map((product) => {
-    const article = element('article', `product-story product-story--${classNames[product.id]}`);
-    article.append(
-      element('p', 'eyebrow', product.eyebrow),
-      element('h3', '', product.title),
-      element('p', '', product.text),
-    );
-    return article;
-  }));
-};
-
-const renderSalonOffer = () => {
-  const target = document.querySelector('[data-salon-offer]');
-  if (!target) return;
-  target.replaceChildren(...siteContent.salonOffer.map((offer, index) => {
-    const classes = [offer.priority === 'secondary' ? 'is-secondary' : '', offer.status === 'coming-soon' ? 'is-coming' : ''].filter(Boolean).join(' ');
-    const item = element('li', classes);
-    item.append(element('span', '', String(index + 1).padStart(2, '0')), document.createTextNode(offer.label));
-    if (offer.status === 'coming-soon') item.append(element('small', '', 'demnächst'));
-    return item;
-  }));
-};
-
-const renderEvents = () => {
-  const target = document.querySelector('[data-events]');
-  if (!target) return;
-  target.replaceChildren(...siteContent.events.map((event) => {
-    const isDetailed = event.featured || event.description;
-    const article = element('article', `event${event.featured ? ' event--featured' : ''}${isDetailed ? '' : ' event--compact'}`);
-
-    if (!isDetailed) {
-      article.append(element('h3', '', event.title), element('span', '', event.date));
-      return article;
-    }
-
-    const heading = element('div');
-    heading.append(element('p', 'eyebrow', event.date ?? event.recurrence ?? 'Weitere Termine folgen.'), element('h3', '', event.title));
-    const detail = element('div');
-    if (event.shortDescription) detail.append(element(event.featured ? 'strong' : 'p', '', event.shortDescription));
-    if (event.description) detail.append(element('p', '', event.description));
-    article.append(heading, detail);
-    return article;
-  }));
-};
-
-const renderTeaFamilies = () => {
-  const target = document.querySelector('[data-tea-families]');
-  if (!target) return;
-
-  target.replaceChildren(...siteContent.teaEnjoyment.teaFamilies.map((family) => {
-    const article = element('article');
-    article.append(element('h3', '', family.name), element('p', '', family.note));
-    return article;
-  }));
-};
-
-const renderDelicacies = () => {
-  const target = document.querySelector('[data-delicacies]');
-  if (!target) return;
-  target.replaceChildren(...siteContent.teaEnjoyment.delicacies.map((item) => element('li', '', item)));
-};
-
-const createEventArticle = (event, modifier = '') => {
-  const article = element('article', `event-system-card${modifier ? ` ${modifier}` : ''}`);
-  article.dataset.eventSlug = event.slug;
-  const meta = element('p', 'eyebrow', [event.category, event.date ?? event.recurrence ?? 'Weitere Termine folgen.', event.time].filter(Boolean).join(' · '));
-  const heading = element('h3', '', event.title);
-  const summary = element('p', '', event.shortDescription);
-  const status = element('span', `event-status event-status--${event.status}`, event.status === 'upcoming' ? 'Kommender Termin' : event.status === 'sold-out' ? 'Ausgebucht' : event.status === 'past' ? 'Vergangen' : 'Weitere Termine folgen');
-  article.append(meta, heading, summary, status);
-  if (event.status === 'upcoming') {
-    if (event.bookingUrl) {
-      const bookingLink = element('a', 'event-action', siteContent.conversionActions.event.bookingLabel);
-      bookingLink.href = event.bookingUrl;
-      article.append(bookingLink);
-    } else {
-      article.append(element('span', 'event-action event-action--pending', `${siteContent.conversionActions.event.bookingLabel} · coming soon`));
-    }
-  }
-  return article;
-};
-
-const renderEventPage = () => {
-  const nextTarget = document.querySelector('[data-featured-event]');
-  const upcomingTarget = document.querySelector('[data-upcoming-events]');
-  const recurringTarget = document.querySelector('[data-recurring-events]');
-  if (!nextTarget && !upcomingTarget && !recurringTarget) return;
-
-  const upcoming = siteContent.events.filter(({ status }) => status === 'upcoming');
-  const recurring = siteContent.events.filter(({ recurrence }) => recurrence);
-  const nextEvent = upcoming.find(({ featured }) => featured) ?? upcoming[0];
-
-  if (nextTarget) nextTarget.replaceChildren(nextEvent ? createEventArticle(nextEvent, 'event-system-card--featured') : element('p', 'event-empty', 'Weitere Termine folgen.'));
-  if (upcomingTarget) upcomingTarget.replaceChildren(...(upcoming.length ? upcoming.map((event) => createEventArticle(event)) : [element('p', 'event-empty', 'Weitere Termine folgen.') ]));
-  if (recurringTarget) recurringTarget.replaceChildren(...recurring.map((event) => createEventArticle(event)));
-};
-
-renderTeaOfTheDay();
-renderNextEvent();
-renderProductWorld();
-renderSalonOffer();
-renderEvents();
-renderTeaFamilies();
-renderDelicacies();
-renderEventPage();
+window.matchMedia('(min-width: 72rem)').addEventListener('change', ({ matches }) => {
+  if (matches && header.classList.contains('open')) closeMenu();
+});

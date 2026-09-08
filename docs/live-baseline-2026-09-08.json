@@ -1,0 +1,191 @@
+[
+  {
+    "file": "index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "d2e9e075d92206fa7c7e9576940e96ee419193584896548fff76d7ed4ac0de77",
+    "liveSha256": "d2e9e075d92206fa7c7e9576940e96ee419193584896548fff76d7ed4ac0de77"
+  },
+  {
+    "file": "script.3405b7d1.js",
+    "status": 200,
+    "match": true,
+    "localSha256": "3405b7d1c7b73049157be0a1ecce102781791e96fbd7f225ecb803b0e57055bd",
+    "liveSha256": "3405b7d1c7b73049157be0a1ecce102781791e96fbd7f225ecb803b0e57055bd"
+  },
+  {
+    "file": "styles.657a98d6.css",
+    "status": 200,
+    "match": true,
+    "localSha256": "657a98d681393fa1e25f90f8f3c4376362e89a683c7d6ce3a676e5bbccea62fb",
+    "liveSha256": "657a98d681393fa1e25f90f8f3c4376362e89a683c7d6ce3a676e5bbccea62fb"
+  },
+  {
+    "file": "tee-genuss/index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "4a2bbe8a3cfbec27a9dd47eea30a439af2dcfb1d440acd2c4bbafcfdb4e1f339",
+    "liveSha256": "4a2bbe8a3cfbec27a9dd47eea30a439af2dcfb1d440acd2c4bbafcfdb4e1f339"
+  },
+  {
+    "file": "salon/index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "408890252fdc7c2a1043d74852690cd5f632aef3ec44cd7c161bfbca23a96768",
+    "liveSha256": "408890252fdc7c2a1043d74852690cd5f632aef3ec44cd7c161bfbca23a96768"
+  },
+  {
+    "file": "datenschutz/index.html",
+    "match": true,
+    "status": 200,
+    "liveSha256": "055eca030a94cdf78ab4a02a6a3d708ea5b080bffa82e4d65c7568ef5a13232d",
+    "localSha256": "055eca030a94cdf78ab4a02a6a3d708ea5b080bffa82e4d65c7568ef5a13232d"
+  },
+  {
+    "file": "veranstaltungen/index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "0dcb376fd31933629af26ea2f962bdd5fdcb5e6b1fc2b5dfb229cb53fa9a19ef",
+    "liveSha256": "0dcb376fd31933629af26ea2f962bdd5fdcb5e6b1fc2b5dfb229cb53fa9a19ef"
+  },
+  {
+    "file": "geschenkbox/index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "eb2740c62c71d0ddc1523ff6645b2ce3463e93c3f8f7e93e7f9b4a8f78f87525",
+    "liveSha256": "eb2740c62c71d0ddc1523ff6645b2ce3463e93c3f8f7e93e7f9b4a8f78f87525"
+  },
+  {
+    "file": "impressum/index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "2a6d02897ebc6fedceee804d8dbf861c2b189b5857826071fa86db1168958562",
+    "liveSha256": "2a6d02897ebc6fedceee804d8dbf861c2b189b5857826071fa86db1168958562"
+  },
+  {
+    "file": "maria/index.html",
+    "status": 200,
+    "match": true,
+    "localSha256": "717189b6653b86ac039305f68b7fb9bb0eccbea6b75b96934b73c5a748595858",
+    "liveSha256": "717189b6653b86ac039305f68b7fb9bb0eccbea6b75b96934b73c5a748595858"
+  },
+  {
+    "file": "assets/favicon.png",
+    "status": 200,
+    "match": true,
+    "localSha256": "ea77cf0986bf7c5c664d2cc39ac84d308792a659de88732426a5f85dc1066762",
+    "liveSha256": "ea77cf0986bf7c5c664d2cc39ac84d308792a659de88732426a5f85dc1066762"
+  },
+  {
+    "file": "assets/camellia.svg",
+    "status": 200,
+    "match": true,
+    "localSha256": "597fb58c6871f5b4857be71281d0edb1d472ece944fb4b6eb0eec05f28e6c603",
+    "liveSha256": "597fb58c6871f5b4857be71281d0edb1d472ece944fb4b6eb0eec05f28e6c603"
+  },
+  {
+    "file": "assets/lupercia-logo.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "f4ee29153e5ed3a004977fd18a1fb72e68b7e1b0f89d3d4a3d1d6eaeb78d4383",
+    "liveSha256": "f4ee29153e5ed3a004977fd18a1fb72e68b7e1b0f89d3d4a3d1d6eaeb78d4383"
+  },
+  {
+    "file": "assets/images/lupercia-fensterblick.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "017c135fad9b4d7c6005dba92ec226868067b1682a4c3a1546fca4722a8f9c0c",
+    "liveSha256": "017c135fad9b4d7c6005dba92ec226868067b1682a4c3a1546fca4722a8f9c0c"
+  },
+  {
+    "file": "assets/images/lupercia-fensterplatz-bonn.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "d2e78bd63906d3a535b691a70b1ac23d905ea6b14754520d2bd90c5ac423a8aa",
+    "liveSha256": "d2e78bd63906d3a535b691a70b1ac23d905ea6b14754520d2bd90c5ac423a8aa"
+  },
+  {
+    "file": "assets/images/lupercia-tea-time-tisch.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "474901f66272a7835b186c6f295c157e61d25ea810b2b18afbb5f590fb8b1ee4",
+    "liveSha256": "474901f66272a7835b186c6f295c157e61d25ea810b2b18afbb5f590fb8b1ee4"
+  },
+  {
+    "file": "assets/images/lupercia-salon-hero.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "eb1c75cbfac0bbd1efcb065eeec86dbdcecd20e4160f19e87be04fd8a57ca103",
+    "liveSha256": "eb1c75cbfac0bbd1efcb065eeec86dbdcecd20e4160f19e87be04fd8a57ca103"
+  },
+  {
+    "file": "assets/images/maria-moreno-portrait.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "a558d0b341b5a531f6b416485262c7aa7f450f3dcf2a61e7d3cc6685fb918d98",
+    "liveSha256": "a558d0b341b5a531f6b416485262c7aa7f450f3dcf2a61e7d3cc6685fb918d98"
+  },
+  {
+    "file": "assets/images/lupercia-tee-des-tages.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "4ea883e7c30193c26f933dd1f7b1bb8526dc43c08522858324576ce31c0e1768",
+    "liveSha256": "4ea883e7c30193c26f933dd1f7b1bb8526dc43c08522858324576ce31c0e1768"
+  },
+  {
+    "file": "assets/images/lupercia-startseite-hero.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "1d886ca21edef00b478d9451f3331dcffc476a825ebb954d16f47296a832dff6",
+    "liveSha256": "1d886ca21edef00b478d9451f3331dcffc476a825ebb954d16f47296a832dff6"
+  },
+  {
+    "file": "assets/images/lupercia-porzellan-etagere.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "b6c3d6e0e7810fceb3853627a6928394f1d8e1607e835322cdcc91f55df6397a",
+    "liveSha256": "b6c3d6e0e7810fceb3853627a6928394f1d8e1607e835322cdcc91f55df6397a"
+  },
+  {
+    "file": "assets/images/lupercia-geschenkbox.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "90db67d8142fee4614ac477785f417f301c4784c06360dd382f8a4eb331448f1",
+    "liveSha256": "90db67d8142fee4614ac477785f417f301c4784c06360dd382f8a4eb331448f1"
+  },
+  {
+    "file": "assets/images/lupercia-schaufenster.webp",
+    "status": 200,
+    "match": true,
+    "localSha256": "24e2dcf5b533651504c6dd5ba4377b62059f7cd7243458b717bdce674fd4ca86",
+    "liveSha256": "24e2dcf5b533651504c6dd5ba4377b62059f7cd7243458b717bdce674fd4ca86"
+  },
+  {
+    "file": "assets/fonts/Fraunces-latin-ext.woff2",
+    "status": 200,
+    "match": true,
+    "localSha256": "f120089b9440f3e35a980a2137347b1851ad46ee4b8ad5c63b6c07e053fa40e2",
+    "liveSha256": "f120089b9440f3e35a980a2137347b1851ad46ee4b8ad5c63b6c07e053fa40e2"
+  },
+  {
+    "file": "assets/fonts/SourceSans3-latin-ext.woff2",
+    "status": 200,
+    "match": true,
+    "localSha256": "ed3571ea9ff752f1c846f1c9ad2b0006de42f478a2db9163a74db0729a4eb281",
+    "liveSha256": "ed3571ea9ff752f1c846f1c9ad2b0006de42f478a2db9163a74db0729a4eb281"
+  },
+  {
+    "file": "assets/fonts/Fraunces-latin.woff2",
+    "status": 200,
+    "match": true,
+    "localSha256": "48282a415ec22e31beaf0a0666e6fae0c8cbddcd0b1f6e729f27c3ade8a64e43",
+    "liveSha256": "48282a415ec22e31beaf0a0666e6fae0c8cbddcd0b1f6e729f27c3ade8a64e43"
+  },
+  {
+    "file": "assets/fonts/SourceSans3-latin.woff2",
+    "status": 200,
+    "match": true,
+    "localSha256": "ac057a5593cbe3df0d2585da5dd5f33b8efa84aa30550c710fe061b37fc5c54b",
+    "liveSha256": "ac057a5593cbe3df0d2585da5dd5f33b8efa84aa30550c710fe061b37fc5c54b"
+  }
+]
