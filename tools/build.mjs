@@ -1,29 +1,47 @@
-import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { cp, mkdir, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 
-const outputDirectory = new URL('../dist/', import.meta.url);
-const sourceDirectory = new URL('../', import.meta.url);
+// Die Seite ist statisches HTML/CSS/JS. Der Build kopiert den Quellbaum nach
+// dist/ und versieht styles.css und script.js mit einem Inhalts-Hash im
+// Dateinamen. Ohne den halten Browser nach einem Deploy ein altes Stylesheet
+// zu neuem HTML - genau das hatte die Geschenkbox-Seite zerlegt. Mit Hash
+// aendert sich bei jeder Aenderung die URL, und die Dateien duerfen dauerhaft
+// gecacht werden.
+const out = new URL('../dist/', import.meta.url);
+const src = new URL('../', import.meta.url);
 
-await rm(outputDirectory, { force: true, recursive: true });
-await mkdir(new URL('assets/images/', outputDirectory), { recursive: true });
+await rm(out, { force: true, recursive: true });
+await mkdir(out, { recursive: true });
 
-for (const file of ['index.html', 'styles.css', 'script.js']) {
-  await cp(new URL(file, sourceDirectory), new URL(file, outputDirectory));
+const hashed = new Map();
+for (const file of ['styles.css', 'script.js']) {
+  const body = await readFile(new URL(file, src));
+  const hash = createHash('sha256').update(body).digest('hex').slice(0, 8);
+  const [name, ext] = file.split('.');
+  const target = `${name}.${hash}.${ext}`;
+  await writeFile(new URL(target, out), body);
+  hashed.set(`/${file}`, `/${target}`);
 }
 
-for (const directory of ['content', 'tee-genuss', 'veranstaltungen', 'maria', 'salon']) {
-  await cp(new URL(`${directory}/`, sourceDirectory), new URL(`${directory}/`, outputDirectory), { recursive: true });
+for (const dir of ['assets', 'salon', 'tee-genuss', 'veranstaltungen', 'geschenkbox', 'maria', 'impressum', 'datenschutz']) {
+  await cp(new URL(`${dir}/`, src), new URL(`${dir}/`, out), { recursive: true });
+}
+await cp(new URL('index.html', src), new URL('index.html', out));
+
+// Verweise in allen ausgelieferten Seiten auf die gehashten Namen umschreiben.
+async function* pages(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const child = new URL(`${entry.name}${entry.isDirectory() ? '/' : ''}`, dir);
+    if (entry.isDirectory()) yield* pages(child);
+    else if (entry.name.endsWith('.html')) yield child;
+  }
+}
+let rewritten = 0;
+for await (const page of pages(out)) {
+  let html = await readFile(page, 'utf8');
+  const before = html;
+  for (const [from, to] of hashed) html = html.replaceAll(`"${from}"`, `"${to}"`);
+  if (html !== before) { await writeFile(page, html); rewritten += 1; }
 }
 
-for (const asset of ['hero-tea-salon.svg']) {
-  await cp(new URL(`assets/${asset}`, sourceDirectory), new URL(`assets/${asset}`, outputDirectory));
-}
-
-// Keep Git text-only: PNG files are stored as Base64 sources and only
-// materialized in the generated, ignored deployment directory.
-const encodedLogo = await readFile(new URL('../assets/lupercia-logo.png.base64', import.meta.url), 'utf8');
-await writeFile(new URL('assets/lupercia-logo.png', outputDirectory), Buffer.from(encodedLogo.replaceAll(/\s/g, ''), 'base64'));
-
-for (const image of ['lupercia-fensterplatz.png', 'lupercia-schaufenster.png', 'maria-moreno.png']) {
-  const encodedImage = await readFile(new URL(`../assets/images/${image}.base64`, import.meta.url), 'utf8');
-  await writeFile(new URL(`assets/images/${image}`, outputDirectory), Buffer.from(encodedImage.replaceAll(/\s/g, ''), 'base64'));
-}
+console.log(`Build: dist/ erstellt, ${hashed.size} Dateien gehasht, ${rewritten} Seiten umgeschrieben.`);
