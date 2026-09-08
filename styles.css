@@ -174,7 +174,7 @@ section[id], main[id] { scroll-margin-top: calc(var(--header-height) + 1.5rem); 
 .gift-photo img { aspect-ratio: 1; object-fit: cover; object-position: 50% 44%; }
 .instagram-heading { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
 .instagram-heading p { max-width: var(--copy); }
-.instagram-feed-shell { min-width: 0; width: 100%; min-height: 20rem; border-radius: .75rem; overflow: hidden; background: var(--paper-deep); }
+.instagram-feed-shell { min-width: 0; width: 100%; min-height: 1px; border-radius: .75rem; overflow: hidden; }
 .instagram-feed-shell iframe { display: block; width: 100%; max-width: 100%; }
 .instagram-feed-shell noscript { display: grid; min-height: 20rem; padding: 2rem; place-items: center; }
 .instagram-data-note { margin-top: .75rem; font-size: .8rem; color: var(--ink-soft); }
@@ -311,4 +311,15 @@ section[id], main[id] { scroll-margin-top: calc(var(--header-height) + 1.5rem); 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Salon imagery remains visible even when the external Instagram feed is unavailable. */
+.salon-glimpses { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.6rem, 2vw, 2rem); margin: 2rem 0; }
+.salon-glimpses figure { padding: .5rem .5rem 1rem; border: 1px solid var(--line); background: #fffaf2; }
+.salon-glimpses figure:nth-child(2) { transform: rotate(2deg); }
+.salon-glimpses img { aspect-ratio: 1; object-fit: cover; }
+.salon-glimpses figcaption { padding-top: .8rem; text-align: center; color: var(--ink-soft); font: 400 1rem/1.4 var(--font-heading); }
+@media (max-width: 41.999rem) {
+  .salon-glimpses { grid-template-columns: 1fr; gap: 1.5rem; }
+  .salon-glimpses img { aspect-ratio: 1.3; }
 }
